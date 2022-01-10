@@ -14,6 +14,7 @@
 		DE5FF62F278C36910018F7DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF62D278C36910018F7DA /* Main.storyboard */; };
 		DE5FF631278C36930018F7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF630278C36930018F7DA /* Assets.xcassets */; };
 		DE5FF634278C36930018F7DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF632278C36930018F7DA /* LaunchScreen.storyboard */; };
+		DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF63A278C38850018F7DA /* OtterScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		DE5FF630278C36930018F7DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE5FF633278C36930018F7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE5FF635278C36930018F7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE5FF63A278C38850018F7DA /* OtterScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
+				DE5FF63A278C38850018F7DA /* OtterScale.swift */,
 			);
 			path = OtterScaleiOS;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					DE5FF616278C364D0018F7DA = {
 						CreatedOnToolsVersion = 13.2;
+						LastSwiftMigration = 1320;
 					};
 					DE5FF624278C36910018F7DA = {
 						CreatedOnToolsVersion = 13.2;
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +363,7 @@
 		DE5FF61F278C364D0018F7DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -380,6 +386,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -388,6 +395,7 @@
 		DE5FF620278C364D0018F7DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
