@@ -7,28 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEB91DE45DF2FD12DF0195E7 /* Pods_OtterScaleiOSExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44D3B1076EA0A88EE77029C /* Pods_OtterScaleiOSExamples.framework */; };
 		DE5FF61B278C364D0018F7DA /* OtterScaleiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5FF628278C36910018F7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF627278C36910018F7DA /* AppDelegate.swift */; };
-		DE5FF62A278C36910018F7DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF629278C36910018F7DA /* SceneDelegate.swift */; };
 		DE5FF62C278C36910018F7DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF62B278C36910018F7DA /* ViewController.swift */; };
-		DE5FF62F278C36910018F7DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF62D278C36910018F7DA /* Main.storyboard */; };
 		DE5FF631278C36930018F7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF630278C36930018F7DA /* Assets.xcassets */; };
 		DE5FF634278C36930018F7DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF632278C36930018F7DA /* LaunchScreen.storyboard */; };
 		DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF63A278C38850018F7DA /* OtterScale.swift */; };
+		DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4048278D9248007A76EB /* NetworkSession.swift */; };
+		DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA404A278D9674007A76EB /* EndPoint.swift */; };
+		DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA404D278D96EF007A76EB /* APIEnvironment.swift */; };
+		DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA404F278D9855007A76EB /* HTTPMethod.swift */; };
+		DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */; };
+		DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4053278DB391007A76EB /* APIOperation.swift */; };
+		DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7923AC1185C57625610C4F26 /* Pods-OtterScaleiOSExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OtterScaleiOSExamples.debug.xcconfig"; path = "../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOSExamples/Pods/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples.debug.xcconfig"; sourceTree = "<group>"; };
+		A41E9ACEFA5E2AE63F8669E6 /* Pods-OtterScaleiOSExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OtterScaleiOSExamples.release.xcconfig"; path = "../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOSExamples/Pods/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples.release.xcconfig"; sourceTree = "<group>"; };
+		D44D3B1076EA0A88EE77029C /* Pods_OtterScaleiOSExamples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OtterScaleiOSExamples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5FF617278C364D0018F7DA /* OtterScaleiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OtterScaleiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtterScaleiOS.h; sourceTree = "<group>"; };
 		DE5FF625278C36910018F7DA /* OtterScaleiOSExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtterScaleiOSExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5FF627278C36910018F7DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE5FF629278C36910018F7DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE5FF62B278C36910018F7DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE5FF62E278C36910018F7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE5FF630278C36930018F7DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE5FF633278C36930018F7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE5FF635278C36930018F7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE5FF63A278C38850018F7DA /* OtterScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScale.swift; sourceTree = "<group>"; };
+		DEBA4048278D9248007A76EB /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		DEBA404A278D9674007A76EB /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		DEBA404D278D96EF007A76EB /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		DEBA404F278D9855007A76EB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+EndPoint.swift"; sourceTree = "<group>"; };
+		DEBA4053278DB391007A76EB /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
+		DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDispatcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,18 +57,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB91DE45DF2FD12DF0195E7 /* Pods_OtterScaleiOSExamples.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0479B4B34A251593D6DBAA25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D44D3B1076EA0A88EE77029C /* Pods_OtterScaleiOSExamples.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6621776FD47C4CC320A75B46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7923AC1185C57625610C4F26 /* Pods-OtterScaleiOSExamples.debug.xcconfig */,
+				A41E9ACEFA5E2AE63F8669E6 /* Pods-OtterScaleiOSExamples.release.xcconfig */,
+			);
+			name = Pods;
+			path = OtterScaleiOSExamples/Pods;
+			sourceTree = "<group>";
+		};
 		DE5FF60D278C364C0018F7DA = {
 			isa = PBXGroup;
 			children = (
 				DE5FF619278C364D0018F7DA /* OtterScaleiOS */,
 				DE5FF626278C36910018F7DA /* OtterScaleiOSExamples */,
 				DE5FF618278C364D0018F7DA /* Products */,
+				6621776FD47C4CC320A75B46 /* Pods */,
+				0479B4B34A251593D6DBAA25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +105,7 @@
 		DE5FF619278C364D0018F7DA /* OtterScaleiOS */ = {
 			isa = PBXGroup;
 			children = (
+				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
 				DE5FF63A278C38850018F7DA /* OtterScale.swift */,
 			);
@@ -80,14 +116,26 @@
 			isa = PBXGroup;
 			children = (
 				DE5FF627278C36910018F7DA /* AppDelegate.swift */,
-				DE5FF629278C36910018F7DA /* SceneDelegate.swift */,
 				DE5FF62B278C36910018F7DA /* ViewController.swift */,
-				DE5FF62D278C36910018F7DA /* Main.storyboard */,
 				DE5FF630278C36930018F7DA /* Assets.xcassets */,
 				DE5FF632278C36930018F7DA /* LaunchScreen.storyboard */,
 				DE5FF635278C36930018F7DA /* Info.plist */,
 			);
 			path = OtterScaleiOSExamples;
+			sourceTree = "<group>";
+		};
+		DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				DEBA404D278D96EF007A76EB /* APIEnvironment.swift */,
+				DEBA404F278D9855007A76EB /* HTTPMethod.swift */,
+				DEBA404A278D9674007A76EB /* EndPoint.swift */,
+				DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */,
+				DEBA4048278D9248007A76EB /* NetworkSession.swift */,
+				DEBA4053278DB391007A76EB /* APIOperation.swift */,
+				DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5FF636278C36930018F7DA /* Build configuration list for PBXNativeTarget "OtterScaleiOSExamples" */;
 			buildPhases = (
+				F41C0B9849750C1FC5792067 /* [CP] Check Pods Manifest.lock */,
 				DE5FF621278C36910018F7DA /* Sources */,
 				DE5FF622278C36910018F7DA /* Frameworks */,
 				DE5FF623278C36910018F7DA /* Resources */,
+				64933E2CD8ABD0681F18F17B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,17 +241,65 @@
 			files = (
 				DE5FF634278C36930018F7DA /* LaunchScreen.storyboard in Resources */,
 				DE5FF631278C36930018F7DA /* Assets.xcassets in Resources */,
-				DE5FF62F278C36910018F7DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64933E2CD8ABD0681F18F17B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41C0B9849750C1FC5792067 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OtterScaleiOSExamples-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE5FF613278C364D0018F7DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
+				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
+				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
+				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
+				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
+				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
+				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,21 +310,12 @@
 			files = (
 				DE5FF62C278C36910018F7DA /* ViewController.swift in Sources */,
 				DE5FF628278C36910018F7DA /* AppDelegate.swift in Sources */,
-				DE5FF62A278C36910018F7DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DE5FF62D278C36910018F7DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE5FF62E278C36910018F7DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE5FF632278C36930018F7DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -388,7 +477,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -419,12 +508,13 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		DE5FF637278C36930018F7DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7923AC1185C57625610C4F26 /* Pods-OtterScaleiOSExamples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,7 +525,6 @@
 				INFOPLIST_FILE = OtterScaleiOSExamples/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,6 +542,7 @@
 		};
 		DE5FF638278C36930018F7DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A41E9ACEFA5E2AE63F8669E6 /* Pods-OtterScaleiOSExamples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,7 +553,6 @@
 				INFOPLIST_FILE = OtterScaleiOSExamples/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

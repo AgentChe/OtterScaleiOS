@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import OtterScaleiOS
 
 class ViewController: UIViewController {
-
+    let otterScale = OtterScale()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor.white
     }
-
-
 }
-

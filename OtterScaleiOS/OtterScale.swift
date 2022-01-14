@@ -6,5 +6,5 @@
 //
 
 public final class OtterScale {
-    
+    public init() {}
 }

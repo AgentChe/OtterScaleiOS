@@ -1,0 +1,16 @@
+PODS:
+  - OtterScaleiOS (0.0.1)
+
+DEPENDENCIES:
+  - OtterScaleiOS (from `../`)
+
+EXTERNAL SOURCES:
+  OtterScaleiOS:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OtterScaleiOS: 08bf6264510531727528b49a4c881ffc5ef502fc
+
+PODFILE CHECKSUM: f3c98c1bce9630f50021ffac3eaad48c542b70d9
+
+COCOAPODS: 1.11.2

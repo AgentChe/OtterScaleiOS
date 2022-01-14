@@ -1,0 +1,11 @@
+platform :ios, '12.1'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+project '/users/akonst17/Documents/OtterScaleiOS/OtterScaleiOS.xcodeproj'
+
+use_frameworks!
+
+target 'OtterScaleiOSExamples' do
+  pod 'OtterScaleiOS', :path => '../'
+end
