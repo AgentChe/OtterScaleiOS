@@ -6,5 +6,12 @@
 //
 
 public final class OtterScale {
+    static let shared = OtterScale()
+    
     private lazy var storage: StorageProtocol = Storage()
+    private lazy var launches: NumberLaunchesProtocol = NumberLaunches()
+    
+    public func initialize(apiKey: String) {
+        launches.launch()
+    }
 }

@@ -24,6 +24,7 @@
 		DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */; };
 		DEE192E3279157C900658DD9 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E2279157C900658DD9 /* Storage.swift */; };
 		DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E7279160CE00658DD9 /* PaymentData.swift */; };
+		DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E92791704500658DD9 /* NumberLaunches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousIDStorage.swift; sourceTree = "<group>"; };
 		DEE192E2279157C900658DD9 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DEE192E7279160CE00658DD9 /* PaymentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
+		DEE192E92791704500658DD9 /* NumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberLaunches.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
 				DE5FF63A278C38850018F7DA /* OtterScale.swift */,
+				DEE192E92791704500658DD9 /* NumberLaunches.swift */,
 			);
 			path = OtterScaleiOS;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
+				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
@@ -563,6 +567,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,6 +596,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
