@@ -13,5 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
+        
+        OtterScale.shared.initialize(host: "https://api.otterscale.com", apiKey: "qwerty")
     }
 }

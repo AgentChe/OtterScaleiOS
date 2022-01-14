@@ -25,6 +25,9 @@
 		DEE192E3279157C900658DD9 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E2279157C900658DD9 /* Storage.swift */; };
 		DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E7279160CE00658DD9 /* PaymentData.swift */; };
 		DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E92791704500658DD9 /* NumberLaunches.swift */; };
+		DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F42791A4D700658DD9 /* ADServiceToken.swift */; };
+		DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */; };
+		DEE192FA2791A60400658DD9 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		DEE192E2279157C900658DD9 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DEE192E7279160CE00658DD9 /* PaymentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
 		DEE192E92791704500658DD9 /* NumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberLaunches.swift; sourceTree = "<group>"; };
+		DEE192F42791A4D700658DD9 /* ADServiceToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADServiceToken.swift; sourceTree = "<group>"; };
+		DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendADServiceTokenRequest.swift; sourceTree = "<group>"; };
+		DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		DE5FF619278C364D0018F7DA /* OtterScaleiOS */ = {
 			isa = PBXGroup;
 			children = (
+				DEE192F32791A4CB00658DD9 /* ADAttributions */,
 				DEE192E5279160B900658DD9 /* Payments */,
 				DEE192E4279158A800658DD9 /* Storage */,
 				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
@@ -172,6 +179,24 @@
 				DEE192E7279160CE00658DD9 /* PaymentData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DEE192F32791A4CB00658DD9 /* ADAttributions */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192F62791A54900658DD9 /* Request */,
+				DEE192F42791A4D700658DD9 /* ADServiceToken.swift */,
+				DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */,
+			);
+			path = ADAttributions;
+			sourceTree = "<group>";
+		};
+		DEE192F62791A54900658DD9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,15 +356,18 @@
 			files = (
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
+				DEE192FA2791A60400658DD9 /* ADAttributionsManager.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
+				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
 				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
+				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
