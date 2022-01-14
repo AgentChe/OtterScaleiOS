@@ -11,7 +11,14 @@ public final class OtterScale {
     private lazy var storage: StorageProtocol = Storage()
     private lazy var launches: NumberLaunchesProtocol = NumberLaunches()
     
-    public func initialize(apiKey: String) {
+    private var apiEnvironment: APIEnvironmentProtocol!
+}
+
+// MARK: Public
+public extension OtterScale {
+    func initialize(host: String, apiKey: String) {
         launches.launch()
+        
+        apiEnvironment = APIEnvironment(host: host, apiKey: apiKey)
     }
 }

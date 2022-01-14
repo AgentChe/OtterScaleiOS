@@ -7,10 +7,10 @@
 
 protocol APIEnvironmentProtocol {
     var host: String { get }
+    var apiKey: String { get }
 }
 
 struct APIEnvironment: APIEnvironmentProtocol {
-    var host: String {
-        "https://api.otterscale.com"
-    }
+    let host: String
+    let apiKey: String
 }

@@ -12,9 +12,6 @@ protocol RequestDispatcherProtocol {
 }
 
 final class RequestDispatcher: RequestDispatcherProtocol {
-    static let `default` = RequestDispatcher(environment: APIEnvironment(),
-                                             networkSession: NetworkSession())
-    
     private let environment: APIEnvironmentProtocol
     private let networkSession: NetworkSessionProtocol
     

@@ -7,7 +7,7 @@
 
 protocol APIOperationProtocol {
     func cancel()
-    func execute(dispatcher: RequestDispatcherProtocol, completion: @escaping (Any?) -> Void)
+    func execute(dispatcher: RequestDispatcherProtocol, completion: ((Any?) -> Void)?)
 }
 
 final class APIOperation: APIOperationProtocol {
@@ -31,9 +31,9 @@ extension APIOperation {
         task?.cancel()
     }
     
-    func execute(dispatcher: RequestDispatcherProtocol = RequestDispatcher.default, completion: @escaping (Any?) -> Void) {
+    func execute(dispatcher: RequestDispatcherProtocol, completion: ((Any?) -> Void)? = nil) {
         task = dispatcher.execute(endPoint: endPoint) { result in
-            completion(result)
+            completion?(result)
         }
     }
 }
