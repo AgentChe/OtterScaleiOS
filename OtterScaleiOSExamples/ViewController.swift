@@ -9,8 +9,6 @@ import UIKit
 import OtterScaleiOS
 
 class ViewController: UIViewController {
-    let otterScale = OtterScale()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

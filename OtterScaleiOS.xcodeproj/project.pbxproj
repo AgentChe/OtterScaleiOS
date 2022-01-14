@@ -21,6 +21,9 @@
 		DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */; };
 		DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4053278DB391007A76EB /* APIOperation.swift */; };
 		DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */; };
+		DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */; };
+		DEE192E3279157C900658DD9 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E2279157C900658DD9 /* Storage.swift */; };
+		DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E7279160CE00658DD9 /* PaymentData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+EndPoint.swift"; sourceTree = "<group>"; };
 		DEBA4053278DB391007A76EB /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
 		DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDispatcher.swift; sourceTree = "<group>"; };
+		DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousIDStorage.swift; sourceTree = "<group>"; };
+		DEE192E2279157C900658DD9 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		DEE192E7279160CE00658DD9 /* PaymentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 		DE5FF619278C364D0018F7DA /* OtterScaleiOS */ = {
 			isa = PBXGroup;
 			children = (
+				DEE192E5279160B900658DD9 /* Payments */,
+				DEE192E4279158A800658DD9 /* Storage */,
 				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
 				DE5FF63A278C38850018F7DA /* OtterScale.swift */,
@@ -136,6 +144,31 @@
 				DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		DEE192E4279158A800658DD9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192E2279157C900658DD9 /* Storage.swift */,
+				DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		DEE192E5279160B900658DD9 /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192E6279160C300658DD9 /* Model */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		DEE192E6279160C300658DD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192E7279160CE00658DD9 /* PaymentData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,13 +327,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
+				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
+				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
 				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
+				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
