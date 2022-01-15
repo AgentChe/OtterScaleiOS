@@ -15,6 +15,8 @@ public final class OtterScale {
     
     private lazy var adAttributionsManager = ADAttributionsManager(apiEnvironment: apiEnvironment,
                                                                    storage: storage)
+    private lazy var iapManager = IAPManager(apiEnvironment: apiEnvironment,
+                                             storage: storage)
 }
 
 // MARK: Public
@@ -25,6 +27,7 @@ public extension OtterScale {
         apiEnvironment = APIEnvironment(host: host, apiKey: apiKey)
         
         initializeForFirstLaunch()
+        initializeForColdLaunch()
     }
 }
 
@@ -36,5 +39,9 @@ private extension OtterScale {
         }
         
         adAttributionsManager.syncADServiceToken()
+    }
+    
+    func initializeForColdLaunch() {
+        iapManager.validateAppStoreReceipt()
     }
 }

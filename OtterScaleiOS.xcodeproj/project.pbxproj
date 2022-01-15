@@ -28,6 +28,14 @@
 		DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F42791A4D700658DD9 /* ADServiceToken.swift */; };
 		DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */; };
 		DEE192FA2791A60400658DD9 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */; };
+		DEE192FD2791B6DB00658DD9 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192FC2791B6DB00658DD9 /* IAPManager.swift */; };
+		DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */; };
+		DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */; };
+		DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193052792B54A00658DD9 /* AppStoreReceipt.swift */; };
+		DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */; };
+		DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */; };
+		DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */; };
+		DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930F2792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +65,14 @@
 		DEE192F42791A4D700658DD9 /* ADServiceToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADServiceToken.swift; sourceTree = "<group>"; };
 		DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendADServiceTokenRequest.swift; sourceTree = "<group>"; };
 		DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
+		DEE192FC2791B6DB00658DD9 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptRefreshRequest.swift; sourceTree = "<group>"; };
+		DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptFetcher.swift; sourceTree = "<group>"; };
+		DEE193052792B54A00658DD9 /* AppStoreReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceipt.swift; sourceTree = "<group>"; };
+		DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPValidateAppStoreReceipt.swift; sourceTree = "<group>"; };
+		DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAppStoreReceiptRequest.swift; sourceTree = "<group>"; };
+		DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreValidateResult.swift; sourceTree = "<group>"; };
+		DEE1930F2792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAppStoreReceiptResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +135,8 @@
 		DE5FF619278C364D0018F7DA /* OtterScaleiOS */ = {
 			isa = PBXGroup;
 			children = (
+				DEE192FB2791B6CF00658DD9 /* IAP */,
 				DEE192F32791A4CB00658DD9 /* ADAttributions */,
-				DEE192E5279160B900658DD9 /* Payments */,
 				DEE192E4279158A800658DD9 /* Storage */,
 				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
@@ -165,18 +181,11 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		DEE192E5279160B900658DD9 /* Payments */ = {
-			isa = PBXGroup;
-			children = (
-				DEE192E6279160C300658DD9 /* Model */,
-			);
-			path = Payments;
-			sourceTree = "<group>";
-		};
 		DEE192E6279160C300658DD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DEE192E7279160CE00658DD9 /* PaymentData.swift */,
+				DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +206,45 @@
 				DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		DEE192FB2791B6CF00658DD9 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192E6279160C300658DD9 /* Model */,
+				DEE193092792C4F800658DD9 /* Request */,
+				DEE193002792B04F00658DD9 /* AppStoreReceipt */,
+				DEE192FC2791B6DB00658DD9 /* IAPManager.swift */,
+				DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
+		DEE193002792B04F00658DD9 /* AppStoreReceipt */ = {
+			isa = PBXGroup;
+			children = (
+				DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */,
+				DEE193052792B54A00658DD9 /* AppStoreReceipt.swift */,
+				DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */,
+			);
+			path = AppStoreReceipt;
+			sourceTree = "<group>";
+		};
+		DEE193092792C4F800658DD9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1930A2792C4FD00658DD9 /* ValidateAppStoreReceipt */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DEE1930A2792C4FD00658DD9 /* ValidateAppStoreReceipt */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */,
+				DEE1930F2792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift */,
+			);
+			path = ValidateAppStoreReceipt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,18 +402,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE192FD2791B6DB00658DD9 /* IAPManager.swift in Sources */,
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
+				DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */,
+				DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
+				DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */,
 				DEE192FA2791A60400658DD9 /* ADAttributionsManager.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
+				DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */,
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
+				DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
 				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
 				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,
+				DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */,
+				DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
 				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,
