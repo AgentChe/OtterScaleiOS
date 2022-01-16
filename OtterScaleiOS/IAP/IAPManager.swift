@@ -16,7 +16,7 @@ protocol IAPManagerProtocol {
 
 final class IAPManager: IAPManagerProtocol {
     private let apiEnvironment: APIEnvironmentProtocol
-    private var storage: StorageProtocol
+    private let storage: StorageProtocol
     private let appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol
     private let appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol
     private let requestDispatcher: RequestDispatcherProtocol

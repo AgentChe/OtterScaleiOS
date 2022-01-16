@@ -17,6 +17,10 @@ public extension OtterScale {
         interactor.initialize(host: host, apiKey: apiKey)
     }
     
+    func set(userID: String) {
+        interactor.set(userID: userID)
+    }
+    
     func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
         interactor.updatePaymentData(completion: completion)
     }

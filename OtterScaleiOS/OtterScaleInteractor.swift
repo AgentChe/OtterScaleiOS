@@ -15,6 +15,8 @@ final class OtterScaleInteractor {
                                                                    storage: storage)
     private lazy var iapManager = IAPManager(apiEnvironment: apiEnvironment,
                                              storage: storage)
+    private lazy var userManager = UserManager(apiEnvironment: apiEnvironment,
+                                               storage: storage)
 }
 
 // MARK: Public
@@ -26,6 +28,18 @@ extension OtterScaleInteractor {
         
         initializeForFirstLaunch()
         initializeForColdLaunch()
+    }
+    
+    func set(userID: String) {
+        userManager.set(userID: userID) { [weak self] success in
+            guard let self = self, success else {
+                return
+            }
+            
+            self.updatePaymentData { r in
+                self.storage.externalUserID = userID
+            }
+        }
     }
     
     func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
