@@ -36,6 +36,7 @@
 		DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */; };
 		DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */; };
 		DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930F2792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift */; };
+		DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1932627946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAppStoreReceiptRequest.swift; sourceTree = "<group>"; };
 		DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreValidateResult.swift; sourceTree = "<group>"; };
 		DEE1930F2792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAppStoreReceiptResponse.swift; sourceTree = "<group>"; };
+		DEE1932627946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainAppStoreValidateResultRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE1930A2792C4FD00658DD9 /* ValidateAppStoreReceipt */,
+				DEE1932627946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
+				DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */,
 				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
 				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,

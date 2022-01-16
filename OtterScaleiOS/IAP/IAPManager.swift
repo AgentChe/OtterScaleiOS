@@ -10,6 +10,8 @@ import StoreKit
 protocol IAPManagerProtocol {
     func fetchAppStoreReceipt(completion: @escaping (String?) -> Void)
     func validateAppStoreReceipt(completion: ((AppStoreValidateResult?) -> Void)?)
+    func obtainAppStoreValidateResult(mapper: ValidateAppStoreReceiptResponseProtocol,
+                                      completion: ((AppStoreValidateResult?) -> Void)?)
 }
 
 final class IAPManager: IAPManagerProtocol {
@@ -18,6 +20,8 @@ final class IAPManager: IAPManagerProtocol {
     private let appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol
     private let appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol
     private let requestDispatcher: RequestDispatcherProtocol
+    
+    private lazy var operations = [String: Any]()
     
     init(apiEnvironment: APIEnvironmentProtocol,
          storage: StorageProtocol,
@@ -71,6 +75,36 @@ extension IAPManager {
             }
             
             self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt, completion: validateCompletion)
+        }
+    }
+    
+    func obtainAppStoreValidateResult(mapper: ValidateAppStoreReceiptResponseProtocol = ValidateAppStoreReceiptResponse(),
+                                      completion: ((AppStoreValidateResult?) -> Void)? = nil) {
+        let request = ObtainAppStoreValidateResultRequest(apiKey: apiEnvironment.apiKey,
+                                                          anonymousID: storage.anonymousID,
+                                                          externalUserID: storage.externalUserID,
+                                                          otterScaleUserID: storage.otterScaleUserID)
+        let operation = APIOperation(endPoint: request)
+        
+        let key = "obtain_app_store_validation_result_request"
+        
+        operations[key] = operation
+        
+        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+            guard let self = self else {
+                return
+            }
+            
+            if let response = response, let result = mapper.map(response: response) {
+                self.storage.otterScaleUserID = result.otterScaleID
+                self.storage.paymentData = result.paymentData
+                
+                completion?(result)
+            } else {
+                completion?(nil)
+            }
+            
+            self.operations.removeValue(forKey: key)
         }
     }
 }

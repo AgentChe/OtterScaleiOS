@@ -29,6 +29,12 @@ public extension OtterScale {
         initializeForFirstLaunch()
         initializeForColdLaunch()
     }
+    
+    func forceSync(completion: ((PaymentData?) -> Void)? = nil) {
+        iapManager.obtainAppStoreValidateResult { result in
+            completion?(result?.paymentData)
+        }
+    }
 }
 
 // MARK: Private

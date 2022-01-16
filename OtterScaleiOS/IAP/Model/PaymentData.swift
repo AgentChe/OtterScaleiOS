@@ -5,17 +5,17 @@
 //  Created by Андрей Чернышев on 14.01.2022.
 //
 
-struct PaymentData: Codable {
+public struct PaymentData: Codable {
     let subscriptions: SubscriptionsPaymentData
     let nonConsumables: NonConsumablesPaymentData
 }
 
-struct SubscriptionsPaymentData: Codable {
+public struct SubscriptionsPaymentData: Codable {
     let appleAppStore: [SubscriptionPaymentProduct]
     let googlePlay: [SubscriptionPaymentProduct]
 }
 
-struct SubscriptionPaymentProduct: Codable {
+public struct SubscriptionPaymentProduct: Codable {
     enum Status: String, Codable {
         case refund, trial, paid
     }
@@ -27,12 +27,12 @@ struct SubscriptionPaymentProduct: Codable {
     let renewing: Bool
 }
 
-struct NonConsumablesPaymentData: Codable {
+public struct NonConsumablesPaymentData: Codable {
     let appleAppStore: [NonConsumablePaymentProduct]
     let googlePlay: [NonConsumablePaymentProduct]
 }
 
-struct NonConsumablePaymentProduct: Codable {
+public struct NonConsumablePaymentProduct: Codable {
     let productID: String
     let valid: Bool
 }
