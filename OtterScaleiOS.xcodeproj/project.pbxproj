@@ -40,6 +40,7 @@
 		DEE1932B2794772100658DD9 /* UserSetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1932A2794772100658DD9 /* UserSetRequest.swift */; };
 		DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1932C2794939F00658DD9 /* UserManager.swift */; };
 		DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE19331279494BF00658DD9 /* UserSetResponse.swift */; };
+		DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		DEE1932A2794772100658DD9 /* UserSetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetRequest.swift; sourceTree = "<group>"; };
 		DEE1932C2794939F00658DD9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		DEE19331279494BF00658DD9 /* UserSetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetResponse.swift; sourceTree = "<group>"; };
+		DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScaleInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
 				DE5FF63A278C38850018F7DA /* OtterScale.swift */,
+				DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */,
 				DEE192E92791704500658DD9 /* NumberLaunches.swift */,
 			);
 			path = OtterScaleiOS;
@@ -452,6 +455,7 @@
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
 				DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */,
+				DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
 				DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */,

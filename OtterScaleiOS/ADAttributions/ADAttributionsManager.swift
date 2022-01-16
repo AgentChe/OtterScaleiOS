@@ -45,10 +45,12 @@ extension ADAttributionsManager {
                                                 token: token)
         let operation = APIOperation(endPoint: request)
         
-        operations["sendADServiceTokenRequest"] = operation
+        let key = "send_ad_service_token_request"
+        
+        operations[key] = operation
         
         operation.execute(dispatcher: requestDispatcher) { [weak self] result in
-            self?.operations.removeValue(forKey: "sendADServiceTokenRequest")
+            self?.operations.removeValue(forKey: key)
         }
     }
 }

@@ -59,22 +59,14 @@ extension IAPManager {
     }
     
     func validateAppStoreReceipt(completion: ((AppStoreValidateResult?) -> Void)? = nil) {
-        let validateCompletion: (AppStoreValidateResult?) -> Void = { [weak self] result in
-            if let self = self, let result = result {
-                self.storage.otterScaleUserID = result.otterScaleID
-                self.storage.paymentData = result.paymentData
-            }
-            
-            completion?(result)
-        }
-        
         fetchAppStoreReceipt { [weak self] appStoreReceipt in
+            
             guard let self = self, let appStoreReceipt = appStoreReceipt else {
                 completion?(nil)
                 return
             }
             
-            self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt, completion: validateCompletion)
+            self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt, completion: completion)
         }
     }
     
@@ -96,9 +88,6 @@ extension IAPManager {
             }
             
             if let response = response, let result = mapper.map(response: response) {
-                self.storage.otterScaleUserID = result.otterScaleID
-                self.storage.paymentData = result.paymentData
-                
                 completion?(result)
             } else {
                 completion?(nil)

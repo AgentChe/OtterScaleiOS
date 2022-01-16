@@ -6,7 +6,7 @@
 //
 
 protocol IAPValidateAppStoreReceiptProtocol {
-    func validate(appStoreReceipt: String, completion: @escaping (AppStoreValidateResult?) -> Void)
+    func validate(appStoreReceipt: String, completion: ((AppStoreValidateResult?) -> Void)?)
 }
 
 final class IAPValidateAppStoreReceipt: IAPValidateAppStoreReceiptProtocol {
@@ -34,7 +34,7 @@ final class IAPValidateAppStoreReceipt: IAPValidateAppStoreReceiptProtocol {
 
 // MARK: Internal
 extension IAPValidateAppStoreReceipt {
-    func validate(appStoreReceipt: String, completion: @escaping (AppStoreValidateResult?) -> Void) {
+    func validate(appStoreReceipt: String, completion: ((AppStoreValidateResult?) -> Void)?) {
         let request = ValidateAppStoreReceiptRequest(apiKey: apiEnvironment.apiKey,
                                                      anonymousID: storage.anonymousID,
                                                      externalUserID: storage.externalUserID,
@@ -52,11 +52,11 @@ extension IAPValidateAppStoreReceipt {
                 let response = result,
                 let appStoreValidateResult = self.mapper.map(response: response)
             else {
-                completion(nil)
+                completion?(nil)
                 return
             }
             
-            completion(appStoreValidateResult)
+            completion?(appStoreValidateResult)
             
             self.operation = nil
         }
