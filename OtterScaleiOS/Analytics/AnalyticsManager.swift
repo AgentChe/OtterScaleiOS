@@ -5,37 +5,29 @@
 //  Created by Андрей Чернышев on 14.01.2022.
 //
 
-protocol ADAttributionsManagerProtocol {
-    init(apiEnvironment: APIEnvironmentProtocol,
-         storage: StorageProtocol,
-         adServiceToken: ADServiceTokenProtocol)
-    
-    func syncADServiceToken()
+protocol AnalyticsManagerProtocol {
+    func syncADServiceToken(adServiceToken: ADServiceTokenProtocol)
 }
 
-final class ADAttributionsManager: ADAttributionsManagerProtocol {
+final class AnalyticsManager: AnalyticsManagerProtocol {
     private let apiEnvironment: APIEnvironmentProtocol
-    private let adServiceToken: ADServiceTokenProtocol
     private let storage: StorageProtocol
     private let requestDispatcher: RequestDispatcherProtocol
     
     private lazy var operations = [String: APIOperationProtocol]()
     
     init(apiEnvironment: APIEnvironmentProtocol,
-         storage: StorageProtocol,
-         adServiceToken: ADServiceTokenProtocol = ADServiceToken()) {
+         storage: StorageProtocol) {
         self.apiEnvironment = apiEnvironment
         self.storage = storage
-        self.adServiceToken = adServiceToken
-        
         self.requestDispatcher = RequestDispatcher(environment: apiEnvironment,
                                                    networkSession: NetworkSession())
     }
 }
 
 // MARK: Internal
-extension ADAttributionsManager {
-    func syncADServiceToken() {
+extension AnalyticsManager {
+    func syncADServiceToken(adServiceToken: ADServiceTokenProtocol = ADServiceToken()) {
         guard let token = adServiceToken.attributionToken() else {
             return
         }

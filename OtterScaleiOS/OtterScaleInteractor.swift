@@ -11,8 +11,8 @@ final class OtterScaleInteractor {
     
     private var apiEnvironment: APIEnvironmentProtocol!
     
-    private lazy var adAttributionsManager = ADAttributionsManager(apiEnvironment: apiEnvironment,
-                                                                   storage: storage)
+    private lazy var analyticsManager = AnalyticsManager(apiEnvironment: apiEnvironment,
+                                                              storage: storage)
     private lazy var iapManager = IAPManager(apiEnvironment: apiEnvironment,
                                              storage: storage)
     private lazy var userManager = UserManager(apiEnvironment: apiEnvironment,
@@ -85,7 +85,7 @@ private extension OtterScaleInteractor {
             return
         }
         
-        adAttributionsManager.syncADServiceToken()
+        analyticsManager.syncADServiceToken()
     }
     
     func initializeForColdLaunch() {

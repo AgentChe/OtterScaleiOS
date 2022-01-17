@@ -27,7 +27,7 @@
 		DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E92791704500658DD9 /* NumberLaunches.swift */; };
 		DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F42791A4D700658DD9 /* ADServiceToken.swift */; };
 		DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */; };
-		DEE192FA2791A60400658DD9 /* ADAttributionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */; };
+		DEE192FA2791A60400658DD9 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192F92791A60400658DD9 /* AnalyticsManager.swift */; };
 		DEE192FD2791B6DB00658DD9 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192FC2791B6DB00658DD9 /* IAPManager.swift */; };
 		DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */; };
 		DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */; };
@@ -69,7 +69,7 @@
 		DEE192E92791704500658DD9 /* NumberLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberLaunches.swift; sourceTree = "<group>"; };
 		DEE192F42791A4D700658DD9 /* ADServiceToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADServiceToken.swift; sourceTree = "<group>"; };
 		DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendADServiceTokenRequest.swift; sourceTree = "<group>"; };
-		DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADAttributionsManager.swift; sourceTree = "<group>"; };
+		DEE192F92791A60400658DD9 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		DEE192FC2791B6DB00658DD9 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptRefreshRequest.swift; sourceTree = "<group>"; };
 		DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptFetcher.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			children = (
 				DEE193282794770F00658DD9 /* User */,
 				DEE192FB2791B6CF00658DD9 /* IAP */,
-				DEE192F32791A4CB00658DD9 /* ADAttributions */,
+				DEE192F32791A4CB00658DD9 /* Analytics */,
 				DEE192E4279158A800658DD9 /* Storage */,
 				DE9B5BE0278D4C4B002EBAC3 /* NetworkLayer */,
 				DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */,
@@ -202,14 +202,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DEE192F32791A4CB00658DD9 /* ADAttributions */ = {
+		DEE192F32791A4CB00658DD9 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
 				DEE192F62791A54900658DD9 /* Request */,
 				DEE192F42791A4D700658DD9 /* ADServiceToken.swift */,
-				DEE192F92791A60400658DD9 /* ADAttributionsManager.swift */,
+				DEE192F92791A60400658DD9 /* AnalyticsManager.swift */,
 			);
-			path = ADAttributions;
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		DEE192F62791A54900658DD9 /* Request */ = {
@@ -448,7 +448,7 @@
 				DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
 				DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */,
-				DEE192FA2791A60400658DD9 /* ADAttributionsManager.swift in Sources */,
+				DEE192FA2791A60400658DD9 /* AnalyticsManager.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
 				DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */,
