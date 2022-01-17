@@ -46,6 +46,22 @@ extension OtterScaleInteractor {
         userManager.set(properties: properties)
     }
     
+    func getOtterScaleID() -> String {
+        storage.otterScaleUserID ?? storage.anonymousID
+    }
+    
+    func getPaymentData() -> PaymentData? {
+        storage.paymentData
+    }
+    
+    func getSubscriptions() -> SubscriptionsPaymentData? {
+        storage.paymentData?.subscriptions
+    }
+    
+    func getNonConsumables() -> NonConsumablesPaymentData? {
+        storage.paymentData?.nonConsumables
+    }
+    
     func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
         iapManager.obtainAppStoreValidateResult { [weak self] result in
             guard let self = self else {

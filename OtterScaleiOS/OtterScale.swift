@@ -25,6 +25,22 @@ public extension OtterScale {
         interactor.set(properties: properties)
     }
     
+    func getOtterScaleID() -> String {
+        interactor.getOtterScaleID()
+    }
+    
+    func getPaymentData() -> PaymentData? {
+        interactor.getPaymentData()
+    }
+    
+    func getSubscriptions() -> SubscriptionsPaymentData? {
+        interactor.getSubscriptions()
+    }
+    
+    func getNonConsumables() -> NonConsumablesPaymentData? {
+        interactor.getNonConsumables()
+    }
+    
     func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
         interactor.updatePaymentData(completion: completion)
     }
