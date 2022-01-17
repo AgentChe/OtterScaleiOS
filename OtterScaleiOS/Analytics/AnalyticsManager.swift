@@ -7,6 +7,7 @@
 
 protocol AnalyticsManagerProtocol {
     func syncADServiceToken(adServiceToken: ADServiceTokenProtocol)
+    func registerInstall(infoHelper: InfoHelperProtocol)
 }
 
 final class AnalyticsManager: AnalyticsManagerProtocol {
@@ -41,7 +42,24 @@ extension AnalyticsManager {
         
         operations[key] = operation
         
-        operation.execute(dispatcher: requestDispatcher) { [weak self] result in
+        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+            self?.operations.removeValue(forKey: key)
+        }
+    }
+    
+    func registerInstall(infoHelper: InfoHelperProtocol = InfoHelper()) {
+        let request = RegisterInstallRequest(apiKey: apiEnvironment.apiKey,
+                                             anonymousID: storage.anonymousID,
+                                             currency: infoHelper.currencyCode ?? "",
+                                             country: infoHelper.countryCode ?? "",
+                                             locale: infoHelper.locale ?? "")
+        let operation = APIOperation(endPoint: request)
+        
+        let key = "register_install_request"
+        
+        operations[key] = operation
+        
+        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
             self?.operations.removeValue(forKey: key)
         }
     }

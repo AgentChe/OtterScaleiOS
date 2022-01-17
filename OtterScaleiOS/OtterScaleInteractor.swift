@@ -86,6 +86,7 @@ private extension OtterScaleInteractor {
         }
         
         analyticsManager.syncADServiceToken()
+        analyticsManager.registerInstall()
     }
     
     func initializeForColdLaunch() {

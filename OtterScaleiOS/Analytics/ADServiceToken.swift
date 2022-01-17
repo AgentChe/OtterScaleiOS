@@ -16,7 +16,7 @@ final class ADServiceToken: ADServiceTokenProtocol {
         if #available(iOS 14.3, *) {
             return try? AAAttribution.attributionToken()
         }
-        
+
         return nil
     }
 }

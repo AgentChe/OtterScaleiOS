@@ -41,6 +41,8 @@
 		DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1932C2794939F00658DD9 /* UserManager.swift */; };
 		DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE19331279494BF00658DD9 /* UserSetResponse.swift */; };
 		DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */; };
+		DEE1933C27954B6F00658DD9 /* RegisterInstallRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1933B27954B6F00658DD9 /* RegisterInstallRequest.swift */; };
+		DEE1933E27954C9900658DD9 /* InfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1933D27954C9900658DD9 /* InfoHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		DEE1932C2794939F00658DD9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		DEE19331279494BF00658DD9 /* UserSetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetResponse.swift; sourceTree = "<group>"; };
 		DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScaleInteractor.swift; sourceTree = "<group>"; };
+		DEE1933B27954B6F00658DD9 /* RegisterInstallRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallRequest.swift; sourceTree = "<group>"; };
+		DEE1933D27954C9900658DD9 /* InfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 				DE5FF63A278C38850018F7DA /* OtterScale.swift */,
 				DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */,
 				DEE192E92791704500658DD9 /* NumberLaunches.swift */,
+				DEE1933D27954C9900658DD9 /* InfoHelper.swift */,
 			);
 			path = OtterScaleiOS;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */,
+				DEE1933B27954B6F00658DD9 /* RegisterInstallRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */,
 				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
+				DEE1933E27954C9900658DD9 /* InfoHelper.swift in Sources */,
 				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,
 				DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */,
 				DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */,
@@ -469,6 +476,7 @@
 				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */,
 				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,
+				DEE1933C27954B6F00658DD9 /* RegisterInstallRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
