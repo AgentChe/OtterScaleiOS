@@ -9,6 +9,9 @@ protocol UserManagerProtocol {
     func set(userID: String,
              mapper: UserSetResponseProtocol,
              completion: ((Bool) -> Void)?)
+    func set(properties: [String: Any],
+             mapper: UserSetResponseProtocol,
+             completion: ((Bool) -> Void)?)
 }
 
 final class UserManager: UserManagerProtocol {
@@ -31,7 +34,7 @@ final class UserManager: UserManagerProtocol {
 extension UserManager {
     func set(userID: String,
              mapper: UserSetResponseProtocol = UserSetResponse(),
-             completion: ((Bool) -> Void)?) {
+             completion: ((Bool) -> Void)? = nil) {
         let userParameters = [
             "external_id": userID
         ]
@@ -43,6 +46,32 @@ extension UserManager {
         let operation = APIOperation(endPoint: request)
         
         let key = "set_user_id"
+        
+        operations[key] = operation
+        
+        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+            if let response = response {
+                let result = mapper.map(response: response)
+                completion?(result)
+            } else {
+                completion?(false)
+            }
+            
+            self?.operations.removeValue(forKey: key)
+        }
+    }
+    
+    func set(properties: [String: Any],
+             mapper: UserSetResponseProtocol = UserSetResponse(),
+             completion: ((Bool) -> Void)? = nil) {
+        let request = UserSetRequest(apiKey: apiEnvironment.apiKey,
+                                     anonymousID: storage.anonymousID,
+                                     externalUserID: storage.externalUserID,
+                                     otterScaleUserID: storage.otterScaleUserID,
+                                     userParameters: properties)
+        let operation = APIOperation(endPoint: request)
+        
+        let key = "set_user_properties"
         
         operations[key] = operation
         

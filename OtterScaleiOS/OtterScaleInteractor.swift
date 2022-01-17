@@ -42,6 +42,10 @@ extension OtterScaleInteractor {
         }
     }
     
+    func set(properties: [String: Any]) {
+        userManager.set(properties: properties)
+    }
+    
     func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
         iapManager.obtainAppStoreValidateResult { [weak self] result in
             guard let self = self else {
