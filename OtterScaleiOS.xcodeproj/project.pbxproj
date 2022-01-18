@@ -43,6 +43,8 @@
 		DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */; };
 		DEE1933C27954B6F00658DD9 /* RegisterInstallRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1933B27954B6F00658DD9 /* RegisterInstallRequest.swift */; };
 		DEE1933E27954C9900658DD9 /* InfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1933D27954C9900658DD9 /* InfoHelper.swift */; };
+		DEE19340279591A600658DD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE1933F279591A600658DD9 /* StoreKit.framework */; };
+		DEE19343279594D200658DD9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE19342279594D200658DD9 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,8 @@
 		DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScaleInteractor.swift; sourceTree = "<group>"; };
 		DEE1933B27954B6F00658DD9 /* RegisterInstallRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInstallRequest.swift; sourceTree = "<group>"; };
 		DEE1933D27954C9900658DD9 /* InfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHelper.swift; sourceTree = "<group>"; };
+		DEE1933F279591A600658DD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DEE19342279594D200658DD9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOSExamples/Views/MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB91DE45DF2FD12DF0195E7 /* Pods_OtterScaleiOSExamples.framework in Frameworks */,
+				DEE19340279591A600658DD9 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,7 @@
 		0479B4B34A251593D6DBAA25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1933F279591A600658DD9 /* StoreKit.framework */,
 				D44D3B1076EA0A88EE77029C /* Pods_OtterScaleiOSExamples.framework */,
 			);
 			name = Frameworks;
@@ -166,6 +172,7 @@
 		DE5FF626278C36910018F7DA /* OtterScaleiOSExamples */ = {
 			isa = PBXGroup;
 			children = (
+				DEE19341279594B300658DD9 /* Views */,
 				DE5FF627278C36910018F7DA /* AppDelegate.swift */,
 				DE5FF62B278C36910018F7DA /* ViewController.swift */,
 				DE5FF630278C36930018F7DA /* Assets.xcassets */,
@@ -290,6 +297,14 @@
 				DEE19331279494BF00658DD9 /* UserSetResponse.swift */,
 			);
 			path = UserSetRequest;
+			sourceTree = "<group>";
+		};
+		DEE19341279594B300658DD9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEE19342279594D200658DD9 /* MainView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5FF62C278C36910018F7DA /* ViewController.swift in Sources */,
+				DEE19343279594D200658DD9 /* MainView.swift in Sources */,
 				DE5FF628278C36910018F7DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,9 +710,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M73NH26C3Q;
+				DEVELOPMENT_TEAM = 2W4U9UWRKZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OtterScaleiOSExamples/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -709,8 +726,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.OtterScaleiOSExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = exam.nursing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Nursing Development";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -723,9 +741,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M73NH26C3Q;
+				DEVELOPMENT_TEAM = 2W4U9UWRKZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OtterScaleiOSExamples/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -738,8 +757,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.OtterScaleiOSExamples;
+				PRODUCT_BUNDLE_IDENTIFIER = exam.nursing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Nursing Development";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -8,4 +8,5 @@ use_frameworks!
 
 target 'OtterScaleiOSExamples' do
   pod 'OtterScaleiOS', :path => '../'
+  pod 'SwiftyStoreKit'
 end
