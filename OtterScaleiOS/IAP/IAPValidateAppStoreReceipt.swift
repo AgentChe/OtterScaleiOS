@@ -6,7 +6,9 @@
 //
 
 protocol IAPValidateAppStoreReceiptProtocol {
-    func validate(appStoreReceipt: String, completion: ((AppStoreValidateResult?) -> Void)?)
+    func validate(appStoreReceipt: String,
+                  prices: [IAPPrice],
+                  completion: ((AppStoreValidateResult?) -> Void)?)
 }
 
 final class IAPValidateAppStoreReceipt: IAPValidateAppStoreReceiptProtocol {
@@ -34,12 +36,15 @@ final class IAPValidateAppStoreReceipt: IAPValidateAppStoreReceiptProtocol {
 
 // MARK: Internal
 extension IAPValidateAppStoreReceipt {
-    func validate(appStoreReceipt: String, completion: ((AppStoreValidateResult?) -> Void)?) {
+    func validate(appStoreReceipt: String,
+                  prices: [IAPPrice] = [],
+                  completion: ((AppStoreValidateResult?) -> Void)?) {
         let request = ValidateAppStoreReceiptRequest(apiKey: apiEnvironment.apiKey,
                                                      anonymousID: storage.anonymousID,
                                                      externalUserID: storage.externalUserID,
                                                      otterScaleUserID: storage.otterScaleUserID,
-                                                     appStoreReceipt: appStoreReceipt)
+                                                     appStoreReceipt: appStoreReceipt,
+                                                     prices: prices)
         
         operation = APIOperation(endPoint: request)
         

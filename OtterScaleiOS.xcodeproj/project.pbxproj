@@ -51,6 +51,7 @@
 		DEE193522796CC7A00658DD9 /* IAPProductsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */; };
 		DEE193542796CC8C00658DD9 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193532796CC8C00658DD9 /* IAPProduct.swift */; };
 		DEE193582796D51200658DD9 /* IAPPaymentTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */; };
+		DEE1935A2796FD4600658DD9 /* IAPPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193592796FD4600658DD9 /* IAPPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProductsRequest.swift; sourceTree = "<group>"; };
 		DEE193532796CC8C00658DD9 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
 		DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPaymentTransaction.swift; sourceTree = "<group>"; };
+		DEE193592796FD4600658DD9 /* IAPPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */,
 				DEE193532796CC8C00658DD9 /* IAPProduct.swift */,
 				DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */,
+				DEE193592796FD4600658DD9 /* IAPPrice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
 				DEE193522796CC7A00658DD9 /* IAPProductsRequest.swift in Sources */,
 				DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */,
+				DEE1935A2796FD4600658DD9 /* IAPPrice.swift in Sources */,
 				DEE192FA2791A60400658DD9 /* AnalyticsManager.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,

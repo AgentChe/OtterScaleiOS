@@ -9,10 +9,12 @@ import StoreKit
 
 protocol IAPManagerProtocol {
     func fetchAppStoreReceipt(completion: @escaping (String?) -> Void)
-    func validateAppStoreReceipt(completion: ((AppStoreValidateResult?) -> Void)?)
+    func validateAppStoreReceipt(prices: [IAPPrice],
+                                 completion: ((AppStoreValidateResult?) -> Void)?)
     func obtainAppStoreValidateResult(mapper: ValidateAppStoreReceiptResponseProtocol,
                                       completion: ((AppStoreValidateResult?) -> Void)?)
     func retrieveProducts(ids: [String],
+                          request: IAPProductsRequestProtocol,
                           completion: @escaping ([IAPProduct]) -> Void)
 }
 
@@ -21,7 +23,6 @@ final class IAPManager: IAPManagerProtocol {
     private var storage: StorageProtocol
     private let appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol
     private let appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol
-    private let productsRequest: IAPProductsRequestProtocol
     private let requestDispatcher: RequestDispatcherProtocol
     
     private lazy var operations = [String: Any]()
@@ -30,13 +31,11 @@ final class IAPManager: IAPManagerProtocol {
          storage: StorageProtocol,
          appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol,
          appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol,
-         productsRequest: IAPProductsRequestProtocol,
          requestDispatcher: RequestDispatcherProtocol) {
         self.apiEnvironment = apiEnvironment
         self.storage = storage
         self.appStoreReceiptFetcher = appStoreReceiptFetcher
         self.appStoreReceiptValidator = appStoreReceiptValidator
-        self.productsRequest = productsRequest
         self.requestDispatcher = requestDispatcher
     }
     
@@ -53,7 +52,6 @@ final class IAPManager: IAPManagerProtocol {
                   storage: storage,
                   appStoreReceiptFetcher: AppStoreReceiptFetcher(),
                   appStoreReceiptValidator: appStoreReceiptValidator,
-                  productsRequest: IAPProductsRequest(),
                   requestDispatcher: requestDispatcher)
     }
 }
@@ -64,7 +62,8 @@ extension IAPManager {
         appStoreReceiptFetcher.fetch(completion: completion)
     }
     
-    func validateAppStoreReceipt(completion: ((AppStoreValidateResult?) -> Void)? = nil) {
+    func validateAppStoreReceipt(prices: [IAPPrice] = [],
+                                 completion: ((AppStoreValidateResult?) -> Void)? = nil) {
         let validatorCompletion: ((AppStoreValidateResult?) -> Void) = { [weak self] result in
             guard let self = self else {
                 return
@@ -84,7 +83,9 @@ extension IAPManager {
                 return
             }
             
-            self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt, completion: validatorCompletion)
+            self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt,
+                                                   prices: prices,
+                                                   completion: validatorCompletion)
         }
     }
     
@@ -119,7 +120,8 @@ extension IAPManager {
     }
     
     func retrieveProducts(ids: [String],
+                          request: IAPProductsRequestProtocol,
                           completion: @escaping ([IAPProduct]) -> Void) {
-        productsRequest.retrieve(ids: ids, completion: completion)
+        request.retrieve(ids: ids, completion: completion)
     }
 }
