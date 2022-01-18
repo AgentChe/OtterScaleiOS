@@ -12,6 +12,8 @@ protocol IAPManagerProtocol {
     func validateAppStoreReceipt(completion: ((AppStoreValidateResult?) -> Void)?)
     func obtainAppStoreValidateResult(mapper: ValidateAppStoreReceiptResponseProtocol,
                                       completion: ((AppStoreValidateResult?) -> Void)?)
+    func retrieveProducts(ids: [String],
+                          completion: @escaping ([IAPProduct]) -> Void)
 }
 
 final class IAPManager: IAPManagerProtocol {
@@ -19,6 +21,7 @@ final class IAPManager: IAPManagerProtocol {
     private let storage: StorageProtocol
     private let appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol
     private let appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol
+    private let productsRequest: IAPProductsRequestProtocol
     private let requestDispatcher: RequestDispatcherProtocol
     
     private lazy var operations = [String: Any]()
@@ -27,11 +30,13 @@ final class IAPManager: IAPManagerProtocol {
          storage: StorageProtocol,
          appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol,
          appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol,
+         productsRequest: IAPProductsRequestProtocol,
          requestDispatcher: RequestDispatcherProtocol) {
         self.apiEnvironment = apiEnvironment
         self.storage = storage
         self.appStoreReceiptFetcher = appStoreReceiptFetcher
         self.appStoreReceiptValidator = appStoreReceiptValidator
+        self.productsRequest = productsRequest
         self.requestDispatcher = requestDispatcher
     }
     
@@ -48,6 +53,7 @@ final class IAPManager: IAPManagerProtocol {
                   storage: storage,
                   appStoreReceiptFetcher: AppStoreReceiptFetcher(),
                   appStoreReceiptValidator: appStoreReceiptValidator,
+                  productsRequest: IAPProductsRequest(),
                   requestDispatcher: requestDispatcher)
     }
 }
@@ -95,5 +101,10 @@ extension IAPManager {
             
             self.operations.removeValue(forKey: key)
         }
+    }
+    
+    func retrieveProducts(ids: [String],
+                          completion: @escaping ([IAPProduct]) -> Void) {
+        productsRequest.retrieve(ids: ids, completion: completion)
     }
 }

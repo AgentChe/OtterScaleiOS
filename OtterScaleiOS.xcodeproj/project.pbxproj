@@ -48,6 +48,8 @@
 		DEE193452796936800658DD9 /* IAPTransactionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193442796936800658DD9 /* IAPTransactionObserver.swift */; };
 		DEE19348279697B300658DD9 /* IAPTransactionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE19347279697B300658DD9 /* IAPTransactionHandler.swift */; };
 		DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */; };
+		DEE193522796CC7A00658DD9 /* IAPProductsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */; };
+		DEE193542796CC8C00658DD9 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193532796CC8C00658DD9 /* IAPProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		DEE193442796936800658DD9 /* IAPTransactionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTransactionObserver.swift; sourceTree = "<group>"; };
 		DEE19347279697B300658DD9 /* IAPTransactionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTransactionHandler.swift; sourceTree = "<group>"; };
 		DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPaymentsObserver.swift; sourceTree = "<group>"; };
+		DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProductsRequest.swift; sourceTree = "<group>"; };
+		DEE193532796CC8C00658DD9 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			children = (
 				DEE192E7279160CE00658DD9 /* PaymentData.swift */,
 				DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */,
+				DEE193532796CC8C00658DD9 /* IAPProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				DEE193002792B04F00658DD9 /* AppStoreReceipt */,
 				DEE192FC2791B6DB00658DD9 /* IAPManager.swift */,
 				DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */,
+				DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */,
 			);
 			path = IAP;
 			sourceTree = "<group>";
@@ -485,11 +491,13 @@
 				DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */,
 				DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
+				DEE193522796CC7A00658DD9 /* IAPProductsRequest.swift in Sources */,
 				DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */,
 				DEE192FA2791A60400658DD9 /* AnalyticsManager.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
 				DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */,
+				DEE193542796CC8C00658DD9 /* IAPProduct.swift in Sources */,
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
 				DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */,
