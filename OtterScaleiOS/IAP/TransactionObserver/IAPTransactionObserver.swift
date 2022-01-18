@@ -8,8 +8,7 @@
 import StoreKit
 
 protocol IAPTransactionDelegate: AnyObject {
-    func restored()
-    func purchased()
+    func retrieved(transactions: [IAPPaymentTransaction])
 }
 
 protocol IAPTransactionObserverProtocol: SKPaymentTransactionObserver {
@@ -24,15 +23,14 @@ final class IAPTransactionObserver: NSObject, IAPTransactionObserverProtocol {
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions {
-            switch transaction.transactionState {
-            case .restored:
-                delegate.restored()
-            case .purchased:
-                delegate.purchased()
-            default:
-                break
-            }
+        let filtered = transactions
+            .filter { $0.transactionState == .purchased || $0.transactionState == .restored }
+            .map { IAPPaymentTransaction(original: $0) }
+        
+        guard !filtered.isEmpty else {
+            return
         }
+        
+        delegate.retrieved(transactions: filtered)
     }
 }

@@ -50,6 +50,7 @@
 		DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */; };
 		DEE193522796CC7A00658DD9 /* IAPProductsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */; };
 		DEE193542796CC8C00658DD9 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193532796CC8C00658DD9 /* IAPProduct.swift */; };
+		DEE193582796D51200658DD9 /* IAPPaymentTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPaymentsObserver.swift; sourceTree = "<group>"; };
 		DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProductsRequest.swift; sourceTree = "<group>"; };
 		DEE193532796CC8C00658DD9 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
+		DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPaymentTransaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				DEE192E7279160CE00658DD9 /* PaymentData.swift */,
 				DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */,
 				DEE193532796CC8C00658DD9 /* IAPProduct.swift */,
+				DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
 				DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */,
 				DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */,
+				DEE193582796D51200658DD9 /* IAPPaymentTransaction.swift in Sources */,
 				DEE19348279697B300658DD9 /* IAPTransactionHandler.swift in Sources */,
 				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,

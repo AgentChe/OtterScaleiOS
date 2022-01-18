@@ -19,12 +19,7 @@ final class IAPTransactionHandler: IAPTransactionHandlerProtocol {
 
 // MARK: IAPTransactionDelegate
 extension IAPTransactionHandler {
-    func restored() {
-        // TODO: многократный вызов
-        iapManager.validateAppStoreReceipt(completion: nil)
-    }
-    
-    func purchased() {
+    func retrieved(transactions: [IAPPaymentTransaction]) {
         iapManager.validateAppStoreReceipt(completion: nil)
     }
 }
