@@ -17,6 +17,7 @@ final class OtterScaleInteractor {
                                              storage: storage)
     private lazy var userManager = UserManager(apiEnvironment: apiEnvironment,
                                                storage: storage)
+    private lazy var iapPaymentsObserver = IAPPaymentsObserver(iapManager: iapManager)
 }
 
 // MARK: Public
@@ -26,6 +27,7 @@ extension OtterScaleInteractor {
         
         apiEnvironment = APIEnvironment(host: host, apiKey: apiKey)
         
+        startPaymentsObserve()
         initializeForFirstLaunch()
         initializeForColdLaunch()
     }
@@ -104,5 +106,9 @@ private extension OtterScaleInteractor {
                 self.storage.paymentData = result.paymentData
             }
         }
+    }
+    
+    func startPaymentsObserve() {
+        iapPaymentsObserver.observe()
     }
 }

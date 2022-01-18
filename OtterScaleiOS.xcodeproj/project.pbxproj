@@ -45,6 +45,9 @@
 		DEE1933E27954C9900658DD9 /* InfoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1933D27954C9900658DD9 /* InfoHelper.swift */; };
 		DEE19340279591A600658DD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE1933F279591A600658DD9 /* StoreKit.framework */; };
 		DEE19343279594D200658DD9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE19342279594D200658DD9 /* MainView.swift */; };
+		DEE193452796936800658DD9 /* IAPTransactionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193442796936800658DD9 /* IAPTransactionObserver.swift */; };
+		DEE19348279697B300658DD9 /* IAPTransactionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE19347279697B300658DD9 /* IAPTransactionHandler.swift */; };
+		DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,9 @@
 		DEE1933D27954C9900658DD9 /* InfoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHelper.swift; sourceTree = "<group>"; };
 		DEE1933F279591A600658DD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DEE19342279594D200658DD9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOSExamples/Views/MainView.swift; sourceTree = "<group>"; };
+		DEE193442796936800658DD9 /* IAPTransactionObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTransactionObserver.swift; sourceTree = "<group>"; };
+		DEE19347279697B300658DD9 /* IAPTransactionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTransactionHandler.swift; sourceTree = "<group>"; };
+		DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPPaymentsObserver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 		DEE192FB2791B6CF00658DD9 /* IAP */ = {
 			isa = PBXGroup;
 			children = (
+				DEE19346279695C200658DD9 /* TransactionObserver */,
 				DEE192E6279160C300658DD9 /* Model */,
 				DEE193092792C4F800658DD9 /* Request */,
 				DEE193002792B04F00658DD9 /* AppStoreReceipt */,
@@ -305,6 +312,16 @@
 				DEE19342279594D200658DD9 /* MainView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DEE19346279695C200658DD9 /* TransactionObserver */ = {
+			isa = PBXGroup;
+			children = (
+				DEE193442796936800658DD9 /* IAPTransactionObserver.swift */,
+				DEE19347279697B300658DD9 /* IAPTransactionHandler.swift */,
+				DEE1934927969FCB00658DD9 /* IAPPaymentsObserver.swift */,
+			);
+			path = TransactionObserver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,10 +494,12 @@
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
 				DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */,
 				DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */,
+				DEE193452796936800658DD9 /* IAPTransactionObserver.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
 				DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */,
 				DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */,
+				DEE19348279697B300658DD9 /* IAPTransactionHandler.swift in Sources */,
 				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
 				DEE1933E27954C9900658DD9 /* InfoHelper.swift in Sources */,
@@ -488,6 +507,7 @@
 				DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */,
 				DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
+				DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */,
 				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */,
 				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,
