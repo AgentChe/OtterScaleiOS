@@ -20,7 +20,7 @@ final class OtterScaleInteractor {
     private lazy var iapPaymentsObserver = IAPPaymentsObserver(iapManager: iapManager)
 }
 
-// MARK: Public
+// MARK: Internal
 extension OtterScaleInteractor {
     func initialize(host: String, apiKey: String) {
         launches.launch()
@@ -38,9 +38,7 @@ extension OtterScaleInteractor {
                 return
             }
             
-            self.updatePaymentData { r in
-                self.storage.externalUserID = userID
-            }
+            self.updatePaymentData()
         }
     }
     
@@ -65,16 +63,7 @@ extension OtterScaleInteractor {
     }
     
     func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
-        iapManager.obtainAppStoreValidateResult { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            
-            if let result = result {
-                self.storage.otterScaleUserID = result.otterScaleID
-                self.storage.paymentData = result.paymentData
-            }
-            
+        iapManager.obtainAppStoreValidateResult { result in
             completion?(result?.paymentData)
         }
     }
@@ -92,20 +81,7 @@ private extension OtterScaleInteractor {
     }
     
     func initializeForColdLaunch() {
-        validateAppStoreReceipt()
-    }
-    
-    func validateAppStoreReceipt() {
-        iapManager.validateAppStoreReceipt { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            
-            if let result = result {
-                self.storage.otterScaleUserID = result.otterScaleID
-                self.storage.paymentData = result.paymentData
-            }
-        }
+        iapManager.validateAppStoreReceipt()
     }
     
     func startPaymentsObserve() {

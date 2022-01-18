@@ -18,7 +18,7 @@ protocol IAPManagerProtocol {
 
 final class IAPManager: IAPManagerProtocol {
     private let apiEnvironment: APIEnvironmentProtocol
-    private let storage: StorageProtocol
+    private var storage: StorageProtocol
     private let appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol
     private let appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol
     private let productsRequest: IAPProductsRequestProtocol
@@ -65,14 +65,26 @@ extension IAPManager {
     }
     
     func validateAppStoreReceipt(completion: ((AppStoreValidateResult?) -> Void)? = nil) {
-        fetchAppStoreReceipt { [weak self] appStoreReceipt in
+        let validatorCompletion: ((AppStoreValidateResult?) -> Void) = { [weak self] result in
+            guard let self = self else {
+                return
+            }
             
+            if let result = result {
+                self.storage.otterScaleUserID = result.otterScaleID
+                self.storage.paymentData = result.paymentData
+            }
+            
+            completion?(result)
+        }
+        
+        fetchAppStoreReceipt { [weak self] appStoreReceipt in
             guard let self = self, let appStoreReceipt = appStoreReceipt else {
                 completion?(nil)
                 return
             }
             
-            self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt, completion: completion)
+            self.appStoreReceiptValidator.validate(appStoreReceipt: appStoreReceipt, completion: validatorCompletion)
         }
     }
     
@@ -94,6 +106,9 @@ extension IAPManager {
             }
             
             if let response = response, let result = mapper.map(response: response) {
+                self.storage.otterScaleUserID = result.otterScaleID
+                self.storage.paymentData = result.paymentData
+                
                 completion?(result)
             } else {
                 completion?(nil)
