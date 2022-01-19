@@ -13,11 +13,15 @@ final class OtterScaleInteractor {
     
     private lazy var analyticsManager = AnalyticsManager(apiEnvironment: apiEnvironment,
                                                               storage: storage)
+    
+    private lazy var iapMediator = IAPMediator.shared
     private lazy var iapManager = IAPManager(apiEnvironment: apiEnvironment,
-                                             storage: storage)
+                                             storage: storage,
+                                             mediator: iapMediator)
+    private lazy var iapPaymentsObserver = IAPPaymentsObserver(iapManager: iapManager)
+    
     private lazy var userManager = UserManager(apiEnvironment: apiEnvironment,
                                                storage: storage)
-    private lazy var iapPaymentsObserver = IAPPaymentsObserver(iapManager: iapManager)
 }
 
 // MARK: Internal
@@ -73,6 +77,14 @@ extension OtterScaleInteractor {
         } else {
             iapManager.obtainAppStoreValidateResult(completion: finish)
         }
+    }
+    
+    func add(delegate: OtterScaleReceiptValidationDelegate) {
+        iapMediator.add(delegate: delegate)
+    }
+    
+    func remove(delegate: OtterScaleReceiptValidationDelegate) {
+        iapMediator.remove(delegate: delegate)
     }
 }
 

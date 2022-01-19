@@ -24,6 +24,7 @@ final class IAPManager: IAPManagerProtocol {
     private let appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol
     private let appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol
     private let requestDispatcher: RequestDispatcherProtocol
+    private let mediator: IAPMediatorProtocol
     
     private lazy var operations = [String: Any]()
     
@@ -31,16 +32,19 @@ final class IAPManager: IAPManagerProtocol {
          storage: StorageProtocol,
          appStoreReceiptFetcher: AppStoreReceiptFetcherProtocol,
          appStoreReceiptValidator: IAPValidateAppStoreReceiptProtocol,
-         requestDispatcher: RequestDispatcherProtocol) {
+         requestDispatcher: RequestDispatcherProtocol,
+         mediator: IAPMediatorProtocol) {
         self.apiEnvironment = apiEnvironment
         self.storage = storage
         self.appStoreReceiptFetcher = appStoreReceiptFetcher
         self.appStoreReceiptValidator = appStoreReceiptValidator
         self.requestDispatcher = requestDispatcher
+        self.mediator = mediator
     }
     
     convenience init(apiEnvironment: APIEnvironmentProtocol,
-                     storage: StorageProtocol) {
+                     storage: StorageProtocol,
+                     mediator: IAPMediatorProtocol) {
         let requestDispatcher = RequestDispatcher(environment: apiEnvironment,
                                                   networkSession: NetworkSession())
         
@@ -52,7 +56,8 @@ final class IAPManager: IAPManagerProtocol {
                   storage: storage,
                   appStoreReceiptFetcher: AppStoreReceiptFetcher(),
                   appStoreReceiptValidator: appStoreReceiptValidator,
-                  requestDispatcher: requestDispatcher)
+                  requestDispatcher: requestDispatcher,
+                  mediator: mediator)
     }
 }
 
@@ -74,12 +79,14 @@ extension IAPManager {
                 self.storage.paymentData = result.paymentData
             }
             
+            self.mediator.notifyAbout(result: result?.paymentData)
+            
             completion?(result)
         }
         
         fetchAppStoreReceipt { [weak self] appStoreReceipt in
             guard let self = self, let appStoreReceipt = appStoreReceipt else {
-                completion?(nil)
+                validatorCompletion(nil)
                 return
             }
             

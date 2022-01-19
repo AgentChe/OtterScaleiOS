@@ -21,6 +21,9 @@
 		DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */; };
 		DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4053278DB391007A76EB /* APIOperation.swift */; };
 		DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */; };
+		DECE90CB279807C4009F9E74 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE90CA279807C4009F9E74 /* Weak.swift */; };
+		DECE90CD279807E2009F9E74 /* IAPMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE90CC279807E2009F9E74 /* IAPMediator.swift */; };
+		DECE90D027980978009F9E74 /* OtterScaleReceiptValidationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECE90CF27980978009F9E74 /* OtterScaleReceiptValidationDelegate.swift */; };
 		DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */; };
 		DEE192E3279157C900658DD9 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E2279157C900658DD9 /* Storage.swift */; };
 		DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192E7279160CE00658DD9 /* PaymentData.swift */; };
@@ -74,6 +77,9 @@
 		DEBA4051278D98C6007A76EB /* URLRequest+EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+EndPoint.swift"; sourceTree = "<group>"; };
 		DEBA4053278DB391007A76EB /* APIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperation.swift; sourceTree = "<group>"; };
 		DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDispatcher.swift; sourceTree = "<group>"; };
+		DECE90CA279807C4009F9E74 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Weak.swift; path = ../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOS/Weak.swift; sourceTree = "<group>"; };
+		DECE90CC279807E2009F9E74 /* IAPMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IAPMediator.swift; path = ../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOS/IAP/IAPMediator.swift; sourceTree = "<group>"; };
+		DECE90CF27980978009F9E74 /* OtterScaleReceiptValidationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScaleReceiptValidationDelegate.swift; sourceTree = "<group>"; };
 		DEE192E02791549900658DD9 /* AnonymousIDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousIDStorage.swift; sourceTree = "<group>"; };
 		DEE192E2279157C900658DD9 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DEE192E7279160CE00658DD9 /* PaymentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				DEE193352794994F00658DD9 /* OtterScaleInteractor.swift */,
 				DEE192E92791704500658DD9 /* NumberLaunches.swift */,
 				DEE1933D27954C9900658DD9 /* InfoHelper.swift */,
+				DECE90CA279807C4009F9E74 /* Weak.swift */,
 			);
 			path = OtterScaleiOS;
 			sourceTree = "<group>";
@@ -208,6 +215,14 @@
 				DEBA4055278DB8E2007A76EB /* RequestDispatcher.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		DECE90CE27980965009F9E74 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DECE90CF27980978009F9E74 /* OtterScaleReceiptValidationDelegate.swift */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 		DEE192E4279158A800658DD9 /* Storage */ = {
@@ -253,6 +268,7 @@
 		DEE192FB2791B6CF00658DD9 /* IAP */ = {
 			isa = PBXGroup;
 			children = (
+				DECE90CE27980965009F9E74 /* Public */,
 				DEE19346279695C200658DD9 /* TransactionObserver */,
 				DEE192E6279160C300658DD9 /* Model */,
 				DEE193092792C4F800658DD9 /* Request */,
@@ -260,6 +276,7 @@
 				DEE192FC2791B6DB00658DD9 /* IAPManager.swift */,
 				DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */,
 				DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */,
+				DECE90CC279807E2009F9E74 /* IAPMediator.swift */,
 			);
 			path = IAP;
 			sourceTree = "<group>";
@@ -495,6 +512,7 @@
 				DEE1932B2794772100658DD9 /* UserSetRequest.swift in Sources */,
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
 				DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */,
+				DECE90D027980978009F9E74 /* OtterScaleReceiptValidationDelegate.swift in Sources */,
 				DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
 				DEE193522796CC7A00658DD9 /* IAPProductsRequest.swift in Sources */,
@@ -511,7 +529,9 @@
 				DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */,
 				DEE193452796936800658DD9 /* IAPTransactionObserver.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
+				DECE90CD279807E2009F9E74 /* IAPMediator.swift in Sources */,
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
+				DECE90CB279807C4009F9E74 /* Weak.swift in Sources */,
 				DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */,
 				DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */,
 				DEE193582796D51200658DD9 /* IAPPaymentTransaction.swift in Sources */,

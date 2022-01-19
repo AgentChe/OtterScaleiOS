@@ -35,6 +35,8 @@ final class ViewController: UIViewController {
         mainView.getNonConsumablesButton.addTarget(self, action: #selector(getNonConsumablesTapped), for: .touchUpInside)
         
         addHideKeyboardAction()
+        
+        OtterScale.shared.add(delegate: self)
     }
 }
 
@@ -142,5 +144,12 @@ private extension ViewController {
     @objc
     func hideKeyboardAction() {
         view.endEditing(true)
+    }
+}
+
+// MARK: OtterScaleReceiptValidationDelegate
+extension ViewController: OtterScaleReceiptValidationDelegate {
+    func otterScaleDidValidatedReceipt(with result: PaymentData?) {
+        print(result)
     }
 }

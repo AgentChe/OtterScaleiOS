@@ -46,4 +46,12 @@ public extension OtterScale {
         interactor.updatePaymentData(forceValidation: forceValidation,
                                      completion: completion)
     }
+    
+    func add(delegate: OtterScaleReceiptValidationDelegate) {
+        interactor.add(delegate: delegate)
+    }
+    
+    func remove(delegate: OtterScaleReceiptValidationDelegate) {
+        interactor.remove(delegate: delegate)
+    }
 }
