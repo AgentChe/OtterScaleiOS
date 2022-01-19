@@ -41,7 +41,9 @@ public extension OtterScale {
         interactor.getNonConsumables()
     }
     
-    func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
-        interactor.updatePaymentData(completion: completion)
+    func updatePaymentData(forceValidation: Bool,
+                           completion: ((PaymentData?) -> Void)? = nil) {
+        interactor.updatePaymentData(forceValidation: forceValidation,
+                                     completion: completion)
     }
 }

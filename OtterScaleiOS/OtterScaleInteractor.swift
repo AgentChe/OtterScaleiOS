@@ -62,9 +62,16 @@ extension OtterScaleInteractor {
         storage.paymentData?.nonConsumables
     }
     
-    func updatePaymentData(completion: ((PaymentData?) -> Void)? = nil) {
-        iapManager.obtainAppStoreValidateResult { result in
+    func updatePaymentData(forceValidation: Bool = false,
+                           completion: ((PaymentData?) -> Void)? = nil) {
+        let finish: (AppStoreValidateResult?) -> Void = { result in
             completion?(result?.paymentData)
+        }
+        
+        if forceValidation {
+            iapManager.validateAppStoreReceipt(completion: finish)
+        } else {
+            iapManager.obtainAppStoreValidateResult(completion: finish)
         }
     }
 }

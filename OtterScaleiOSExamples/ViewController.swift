@@ -104,7 +104,7 @@ private extension ViewController {
     
     @objc
     func forceSyncTapped() {
-        OtterScale.shared.updatePaymentData { data in
+        OtterScale.shared.updatePaymentData(forceValidation: true) { data in
             print(data)
         }
     }
