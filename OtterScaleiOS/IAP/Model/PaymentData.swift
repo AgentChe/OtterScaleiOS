@@ -6,33 +6,33 @@
 //
 
 public struct PaymentData: Codable {
-    let subscriptions: SubscriptionsPaymentData
-    let nonConsumables: NonConsumablesPaymentData
+    public let subscriptions: SubscriptionsPaymentData
+    public let nonConsumables: NonConsumablesPaymentData
 }
 
 public struct SubscriptionsPaymentData: Codable {
-    let appleAppStore: [SubscriptionPaymentProduct]
-    let googlePlay: [SubscriptionPaymentProduct]
+    public let appleAppStore: [SubscriptionPaymentProduct]
+    public let googlePlay: [SubscriptionPaymentProduct]
 }
 
 public struct SubscriptionPaymentProduct: Codable {
-    enum Status: String, Codable {
+    public enum Status: String, Codable {
         case refund, trial, paid
     }
     
-    let productID: String
-    let valid: Bool
-    let expiration: String
-    let status: Status
-    let renewing: Bool
+    public let productID: String
+    public let valid: Bool
+    public let expiration: String
+    public let status: Status
+    public let renewing: Bool
 }
 
 public struct NonConsumablesPaymentData: Codable {
-    let appleAppStore: [NonConsumablePaymentProduct]
-    let googlePlay: [NonConsumablePaymentProduct]
+    public let appleAppStore: [NonConsumablePaymentProduct]
+    public let googlePlay: [NonConsumablePaymentProduct]
 }
 
 public struct NonConsumablePaymentProduct: Codable {
-    let productID: String
-    let valid: Bool
+    public let productID: String
+    public let valid: Bool
 }
