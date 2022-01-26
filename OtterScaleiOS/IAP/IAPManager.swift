@@ -99,7 +99,6 @@ extension IAPManager {
     func obtainAppStoreValidateResult(mapper: ValidateAppStoreReceiptResponseProtocol = ValidateAppStoreReceiptResponse(),
                                       completion: ((AppStoreValidateResult?) -> Void)? = nil) {
         let request = ObtainAppStoreValidateResultRequest(apiKey: apiEnvironment.apiKey,
-                                                          anonymousID: storage.anonymousID,
                                                           externalUserID: storage.externalUserID,
                                                           otterScaleUserID: storage.otterScaleUserID)
         let operation = APIOperation(endPoint: request)

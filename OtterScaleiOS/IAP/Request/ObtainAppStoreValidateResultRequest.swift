@@ -7,7 +7,6 @@
 
 struct ObtainAppStoreValidateResultRequest: EndPoint {
     let apiKey: String
-    let anonymousID: String
     let externalUserID: String?
     let otterScaleUserID: String?
     
@@ -21,8 +20,7 @@ struct ObtainAppStoreValidateResultRequest: EndPoint {
     
     var parameters: [String : Any] {
         var params = [
-            "_api_key": apiKey,
-            "anonymous_id": anonymousID
+            "_api_key": apiKey
         ]
         
         if let externalUserID = externalUserID {
