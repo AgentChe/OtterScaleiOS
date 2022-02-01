@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		AEB91DE45DF2FD12DF0195E7 /* Pods_OtterScaleiOSExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44D3B1076EA0A88EE77029C /* Pods_OtterScaleiOSExamples.framework */; };
+		DE0C896027A95C3A006AC291 /* UInt8+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C895F27A95C3A006AC291 /* UInt8+Extensions.swift */; };
+		DE0C896227A95C4C006AC291 /* ArraySlice_UInt8+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896127A95C4C006AC291 /* ArraySlice_UInt8+Extensions.swift */; };
+		DE0C896427A95C5D006AC291 /* ISO8601DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896327A95C5D006AC291 /* ISO8601DateFormatter+Extensions.swift */; };
+		DE0C896727A95CDC006AC291 /* ASN1ObjectIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896627A95CDC006AC291 /* ASN1ObjectIdentifier.swift */; };
+		DE0C896927A95CEB006AC291 /* ASN1Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896827A95CEB006AC291 /* ASN1Container.swift */; };
+		DE0C896B27A95D05006AC291 /* InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896A27A95D05006AC291 /* InAppPurchase.swift */; };
+		DE0C896D27A95D21006AC291 /* AppStoreReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896C27A95D21006AC291 /* AppStoreReceipt.swift */; };
+		DE0C897027A95D52006AC291 /* ASN1ObjectIdentifierBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C896F27A95D52006AC291 /* ASN1ObjectIdentifierBuilder.swift */; };
+		DE0C897227A95D63006AC291 /* ASN1ContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897127A95D63006AC291 /* ASN1ContainerBuilder.swift */; };
+		DE0C897427A95D78006AC291 /* AppleReceiptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897327A95D78006AC291 /* AppleReceiptBuilder.swift */; };
+		DE0C897627A95D86006AC291 /* InAppPurchaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897527A95D86006AC291 /* InAppPurchaseBuilder.swift */; };
+		DE0C897827A95DB5006AC291 /* ReceiptReadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897727A95DB5006AC291 /* ReceiptReadingError.swift */; };
+		DE0C897A27A95DF8006AC291 /* AppStoreReceiptParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897927A95DF8006AC291 /* AppStoreReceiptParser.swift */; };
+		DE0C897C27A96A78006AC291 /* PaymentDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */; };
 		DE5FF61B278C364D0018F7DA /* OtterScaleiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5FF628278C36910018F7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF627278C36910018F7DA /* AppDelegate.swift */; };
 		DE5FF62C278C36910018F7DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF62B278C36910018F7DA /* ViewController.swift */; };
@@ -34,7 +48,7 @@
 		DEE192FD2791B6DB00658DD9 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE192FC2791B6DB00658DD9 /* IAPManager.swift */; };
 		DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */; };
 		DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */; };
-		DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193052792B54A00658DD9 /* AppStoreReceipt.swift */; };
+		DEE193062792B54A00658DD9 /* AppStoreReceiptSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193052792B54A00658DD9 /* AppStoreReceiptSource.swift */; };
 		DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */; };
 		DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */; };
 		DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */; };
@@ -61,6 +75,20 @@
 		7923AC1185C57625610C4F26 /* Pods-OtterScaleiOSExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OtterScaleiOSExamples.debug.xcconfig"; path = "../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOSExamples/Pods/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples.debug.xcconfig"; sourceTree = "<group>"; };
 		A41E9ACEFA5E2AE63F8669E6 /* Pods-OtterScaleiOSExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OtterScaleiOSExamples.release.xcconfig"; path = "../../../../../../Users/akonst17/Documents/OtterScaleiOS/OtterScaleiOSExamples/Pods/Target Support Files/Pods-OtterScaleiOSExamples/Pods-OtterScaleiOSExamples.release.xcconfig"; sourceTree = "<group>"; };
 		D44D3B1076EA0A88EE77029C /* Pods_OtterScaleiOSExamples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OtterScaleiOSExamples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0C895F27A95C3A006AC291 /* UInt8+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt8+Extensions.swift"; sourceTree = "<group>"; };
+		DE0C896127A95C4C006AC291 /* ArraySlice_UInt8+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArraySlice_UInt8+Extensions.swift"; sourceTree = "<group>"; };
+		DE0C896327A95C5D006AC291 /* ISO8601DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISO8601DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		DE0C896627A95CDC006AC291 /* ASN1ObjectIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASN1ObjectIdentifier.swift; sourceTree = "<group>"; };
+		DE0C896827A95CEB006AC291 /* ASN1Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASN1Container.swift; sourceTree = "<group>"; };
+		DE0C896A27A95D05006AC291 /* InAppPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchase.swift; sourceTree = "<group>"; };
+		DE0C896C27A95D21006AC291 /* AppStoreReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceipt.swift; sourceTree = "<group>"; };
+		DE0C896F27A95D52006AC291 /* ASN1ObjectIdentifierBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASN1ObjectIdentifierBuilder.swift; sourceTree = "<group>"; };
+		DE0C897127A95D63006AC291 /* ASN1ContainerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASN1ContainerBuilder.swift; sourceTree = "<group>"; };
+		DE0C897327A95D78006AC291 /* AppleReceiptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReceiptBuilder.swift; sourceTree = "<group>"; };
+		DE0C897527A95D86006AC291 /* InAppPurchaseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseBuilder.swift; sourceTree = "<group>"; };
+		DE0C897727A95DB5006AC291 /* ReceiptReadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptReadingError.swift; sourceTree = "<group>"; };
+		DE0C897927A95DF8006AC291 /* AppStoreReceiptParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptParser.swift; sourceTree = "<group>"; };
+		DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataBuilder.swift; sourceTree = "<group>"; };
 		DE5FF617278C364D0018F7DA /* OtterScaleiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OtterScaleiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtterScaleiOS.h; sourceTree = "<group>"; };
 		DE5FF625278C36910018F7DA /* OtterScaleiOSExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtterScaleiOSExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +118,7 @@
 		DEE192FC2791B6DB00658DD9 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptRefreshRequest.swift; sourceTree = "<group>"; };
 		DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptFetcher.swift; sourceTree = "<group>"; };
-		DEE193052792B54A00658DD9 /* AppStoreReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceipt.swift; sourceTree = "<group>"; };
+		DEE193052792B54A00658DD9 /* AppStoreReceiptSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptSource.swift; sourceTree = "<group>"; };
 		DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPValidateAppStoreReceipt.swift; sourceTree = "<group>"; };
 		DEE1930B2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAppStoreReceiptRequest.swift; sourceTree = "<group>"; };
 		DEE1930D2792C79400658DD9 /* AppStoreValidateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreValidateResult.swift; sourceTree = "<group>"; };
@@ -150,6 +178,50 @@
 			);
 			name = Pods;
 			path = OtterScaleiOSExamples/Pods;
+			sourceTree = "<group>";
+		};
+		DE0C895D27A95C1D006AC291 /* ReceiptLocalParse */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C896E27A95D3D006AC291 /* Builders */,
+				DE0C896527A95CCF006AC291 /* Model */,
+				DE0C895E27A95C2E006AC291 /* Utils */,
+				DE0C897927A95DF8006AC291 /* AppStoreReceiptParser.swift */,
+			);
+			path = ReceiptLocalParse;
+			sourceTree = "<group>";
+		};
+		DE0C895E27A95C2E006AC291 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C895F27A95C3A006AC291 /* UInt8+Extensions.swift */,
+				DE0C896127A95C4C006AC291 /* ArraySlice_UInt8+Extensions.swift */,
+				DE0C896327A95C5D006AC291 /* ISO8601DateFormatter+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE0C896527A95CCF006AC291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C896627A95CDC006AC291 /* ASN1ObjectIdentifier.swift */,
+				DE0C896827A95CEB006AC291 /* ASN1Container.swift */,
+				DE0C896A27A95D05006AC291 /* InAppPurchase.swift */,
+				DE0C896C27A95D21006AC291 /* AppStoreReceipt.swift */,
+				DE0C897727A95DB5006AC291 /* ReceiptReadingError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE0C896E27A95D3D006AC291 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C896F27A95D52006AC291 /* ASN1ObjectIdentifierBuilder.swift */,
+				DE0C897127A95D63006AC291 /* ASN1ContainerBuilder.swift */,
+				DE0C897327A95D78006AC291 /* AppleReceiptBuilder.swift */,
+				DE0C897527A95D86006AC291 /* InAppPurchaseBuilder.swift */,
+			);
+			path = Builders;
 			sourceTree = "<group>";
 		};
 		DE5FF60D278C364C0018F7DA = {
@@ -277,6 +349,7 @@
 				DEE193072792C35900658DD9 /* IAPValidateAppStoreReceipt.swift */,
 				DEE193512796CC7A00658DD9 /* IAPProductsRequest.swift */,
 				DECE90CC279807E2009F9E74 /* IAPMediator.swift */,
+				DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */,
 			);
 			path = IAP;
 			sourceTree = "<group>";
@@ -284,8 +357,9 @@
 		DEE193002792B04F00658DD9 /* AppStoreReceipt */ = {
 			isa = PBXGroup;
 			children = (
+				DE0C895D27A95C1D006AC291 /* ReceiptLocalParse */,
 				DEE193012792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift */,
-				DEE193052792B54A00658DD9 /* AppStoreReceipt.swift */,
+				DEE193052792B54A00658DD9 /* AppStoreReceiptSource.swift */,
 				DEE193032792B45200658DD9 /* AppStoreReceiptFetcher.swift */,
 			);
 			path = AppStoreReceipt;
@@ -509,9 +583,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE192FD2791B6DB00658DD9 /* IAPManager.swift in Sources */,
+				DE0C896B27A95D05006AC291 /* InAppPurchase.swift in Sources */,
 				DEE1932B2794772100658DD9 /* UserSetRequest.swift in Sources */,
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
 				DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */,
+				DE0C897A27A95DF8006AC291 /* AppStoreReceiptParser.swift in Sources */,
 				DECE90D027980978009F9E74 /* OtterScaleReceiptValidationDelegate.swift in Sources */,
 				DEE193082792C35900658DD9 /* IAPValidateAppStoreReceipt.swift in Sources */,
 				DEE192E12791549900658DD9 /* AnonymousIDStorage.swift in Sources */,
@@ -519,13 +595,18 @@
 				DEE1930C2792C50C00658DD9 /* ValidateAppStoreReceiptRequest.swift in Sources */,
 				DEE1935A2796FD4600658DD9 /* IAPPrice.swift in Sources */,
 				DEE192FA2791A60400658DD9 /* AnalyticsManager.swift in Sources */,
+				DE0C896D27A95D21006AC291 /* AppStoreReceipt.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
+				DE0C896927A95CEB006AC291 /* ASN1Container.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
+				DE0C897627A95D86006AC291 /* InAppPurchaseBuilder.swift in Sources */,
 				DEE193022792B09D00658DD9 /* AppStoreReceiptRefreshRequest.swift in Sources */,
+				DE0C896727A95CDC006AC291 /* ASN1ObjectIdentifier.swift in Sources */,
 				DEE193542796CC8C00658DD9 /* IAPProduct.swift in Sources */,
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
+				DE0C896427A95C5D006AC291 /* ISO8601DateFormatter+Extensions.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
-				DEE193062792B54A00658DD9 /* AppStoreReceipt.swift in Sources */,
+				DEE193062792B54A00658DD9 /* AppStoreReceiptSource.swift in Sources */,
 				DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */,
 				DEE193452796936800658DD9 /* IAPTransactionObserver.swift in Sources */,
 				DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */,
@@ -533,21 +614,28 @@
 				DEE192E8279160CE00658DD9 /* PaymentData.swift in Sources */,
 				DECE90CB279807C4009F9E74 /* Weak.swift in Sources */,
 				DEE1932D2794939F00658DD9 /* UserManager.swift in Sources */,
+				DE0C897227A95D63006AC291 /* ASN1ContainerBuilder.swift in Sources */,
 				DEE1932727946FC600658DD9 /* ObtainAppStoreValidateResultRequest.swift in Sources */,
 				DEE193582796D51200658DD9 /* IAPPaymentTransaction.swift in Sources */,
+				DE0C897027A95D52006AC291 /* ASN1ObjectIdentifierBuilder.swift in Sources */,
 				DEE19348279697B300658DD9 /* IAPTransactionHandler.swift in Sources */,
 				DEE192F82791A55A00658DD9 /* SendADServiceTokenRequest.swift in Sources */,
 				DEBA4050278D9855007A76EB /* HTTPMethod.swift in Sources */,
+				DE0C897427A95D78006AC291 /* AppleReceiptBuilder.swift in Sources */,
 				DEE1933E27954C9900658DD9 /* InfoHelper.swift in Sources */,
 				DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */,
 				DEE193042792B45200658DD9 /* AppStoreReceiptFetcher.swift in Sources */,
 				DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
+				DE0C897827A95DB5006AC291 /* ReceiptReadingError.swift in Sources */,
 				DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */,
 				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */,
+				DE0C896027A95C3A006AC291 /* UInt8+Extensions.swift in Sources */,
+				DE0C897C27A96A78006AC291 /* PaymentDataBuilder.swift in Sources */,
 				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,
 				DEE1933C27954B6F00658DD9 /* RegisterInstallRequest.swift in Sources */,
+				DE0C896227A95C4C006AC291 /* ArraySlice_UInt8+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

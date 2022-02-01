@@ -21,7 +21,7 @@ final class ViewController: UIViewController {
         
         view.backgroundColor = UIColor.white
         
-        OtterScale.shared.initialize(host: "https://api.otterscale.com", apiKey: "oCrVwRgejQISV560")
+        OtterScale.shared.initialize(host: "https://api.korrekted.com", apiKey: "oCrVwRgejQISV560")
         
         mainView.setUserIDButton.addTarget(self, action: #selector(setUserIDTapped), for: .touchUpInside)
         mainView.purchase1Button.addTarget(self, action: #selector(buyLifetimeProductTapped), for: .touchUpInside)

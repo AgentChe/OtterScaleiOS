@@ -6,7 +6,7 @@
 //
 
 protocol AppStoreReceiptFetcherProtocol {
-    init(appStoreReceipt: AppStoreReceiptProtocol)
+    init(appStoreReceipt: AppStoreReceiptSourceProtocol)
     
     func fetch(completion: @escaping (String?) -> Void)
 }
@@ -19,9 +19,9 @@ final class AppStoreReceiptFetcher: AppStoreReceiptFetcherProtocol {
     
     private var refreshRequest: AppStoreReceiptRefreshRequest?
     
-    private let appStoreReceipt: AppStoreReceiptProtocol
+    private let appStoreReceipt: AppStoreReceiptSourceProtocol
     
-    init(appStoreReceipt: AppStoreReceiptProtocol = AppStoreReceipt()) {
+    init(appStoreReceipt: AppStoreReceiptSourceProtocol = AppStoreReceiptSource()) {
         self.appStoreReceipt = appStoreReceipt
     }
 }
