@@ -9,7 +9,7 @@ struct UserSetRequest: EndPoint {
     let apiKey: String
     let anonymousID: String
     let externalUserID: String?
-    let otterScaleUserID: String?
+    let internalUserID: String?
     let userParameters: [String: Any]
     
     var path: String {
@@ -31,8 +31,8 @@ struct UserSetRequest: EndPoint {
             params["external_user_id"] = externalUserID
         }
         
-        if let otterScaleUserID = otterScaleUserID {
-            params["otterscale_user_id"] = otterScaleUserID
+        if let internalUserID = internalUserID {
+            params["internal_user_id"] = internalUserID
         }
         
         return params

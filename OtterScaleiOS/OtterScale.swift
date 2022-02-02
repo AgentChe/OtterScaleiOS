@@ -25,8 +25,8 @@ public extension OtterScale {
         interactor.set(properties: properties)
     }
     
-    func getOtterScaleID() -> String {
-        interactor.getOtterScaleID()
+    func getInternalID() -> String {
+        interactor.getInternalID()
     }
     
     func getPaymentData() -> PaymentData? {

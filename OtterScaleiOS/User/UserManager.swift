@@ -41,7 +41,7 @@ extension UserManager {
         let request = UserSetRequest(apiKey: apiEnvironment.apiKey,
                                      anonymousID: storage.anonymousID,
                                      externalUserID: storage.externalUserID,
-                                     otterScaleUserID: storage.otterScaleUserID,
+                                     internalUserID: storage.internalUserID,
                                      userParameters: userParameters)
         let operation = APIOperation(endPoint: request)
         
@@ -72,7 +72,7 @@ extension UserManager {
         let request = UserSetRequest(apiKey: apiEnvironment.apiKey,
                                      anonymousID: storage.anonymousID,
                                      externalUserID: storage.externalUserID,
-                                     otterScaleUserID: storage.otterScaleUserID,
+                                     internalUserID: storage.internalUserID,
                                      userParameters: properties)
         let operation = APIOperation(endPoint: request)
         

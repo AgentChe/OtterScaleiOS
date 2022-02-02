@@ -75,7 +75,7 @@ extension IAPManager {
             }
             
             if let result = result {
-                self.storage.otterScaleUserID = result.otterScaleID
+                self.storage.internalUserID = result.internalUserID
                 self.storage.paymentData = result.paymentData
             }
             
@@ -100,7 +100,7 @@ extension IAPManager {
                                       completion: ((AppStoreValidateResult?) -> Void)? = nil) {
         let request = ObtainAppStoreValidateResultRequest(apiKey: apiEnvironment.apiKey,
                                                           externalUserID: storage.externalUserID,
-                                                          otterScaleUserID: storage.otterScaleUserID)
+                                                          internalUserID: storage.internalUserID)
         let operation = APIOperation(endPoint: request)
         
         let key = "obtain_app_store_validation_result_request"
@@ -113,7 +113,7 @@ extension IAPManager {
             }
             
             if let response = response, let result = mapper.map(response: response) {
-                self.storage.otterScaleUserID = result.otterScaleID
+                self.storage.internalUserID = result.internalUserID
                 self.storage.paymentData = result.paymentData
                 
                 completion?(result)

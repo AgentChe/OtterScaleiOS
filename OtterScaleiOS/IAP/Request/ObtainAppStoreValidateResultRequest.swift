@@ -8,7 +8,7 @@
 struct ObtainAppStoreValidateResultRequest: EndPoint {
     let apiKey: String
     let externalUserID: String?
-    let otterScaleUserID: String?
+    let internalUserID: String?
     
     var path: String {
         "/api/v1/sdk/payment_data"
@@ -27,8 +27,8 @@ struct ObtainAppStoreValidateResultRequest: EndPoint {
             params["external_user_id"] = externalUserID
         }
         
-        if let otterScaleUserID = otterScaleUserID {
-            params["otterscale_user_id"] = otterScaleUserID
+        if let internalUserID = internalUserID {
+            params["internal_user_id"] = internalUserID
         }
         
         return params

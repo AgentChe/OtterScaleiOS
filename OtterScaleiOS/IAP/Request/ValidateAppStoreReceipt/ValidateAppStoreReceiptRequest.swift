@@ -9,7 +9,7 @@ struct ValidateAppStoreReceiptRequest: EndPoint {
     let apiKey: String
     let anonymousID: String
     let externalUserID: String?
-    let otterScaleUserID: String?
+    let internalUserID: String?
     let appStoreReceipt: String
     let prices: [IAPPrice]?
     
@@ -32,8 +32,8 @@ struct ValidateAppStoreReceiptRequest: EndPoint {
             params["external_user_id"] = externalUserID
         }
         
-        if let otterScaleUserID = otterScaleUserID {
-            params["otterscale_user_id"] = otterScaleUserID
+        if let internalUserID = internalUserID {
+            params["internal_user_id"] = internalUserID
         }
         
         if let prices = prices, !prices.isEmpty {

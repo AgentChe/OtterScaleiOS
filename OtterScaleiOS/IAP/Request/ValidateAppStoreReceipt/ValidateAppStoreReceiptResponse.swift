@@ -14,7 +14,7 @@ final class ValidateAppStoreReceiptResponse: ValidateAppStoreReceiptResponseProt
         guard
             let json = response as? [String: Any],
             let data = json["_data"] as? [String: Any],
-            let otterScaleUserID = data["otterscale_user_id"] as? String,
+            let internalUserID = data["internal_user_id"] as? String,
             let subscriptionsData = data["subscriptions"] as? [String: Any],
             let nonConsumablesData = data["non_consumables"] as? [String: Any],
             let paymentData = paymentData(subscriptionsData: subscriptionsData,
@@ -23,7 +23,7 @@ final class ValidateAppStoreReceiptResponse: ValidateAppStoreReceiptResponseProt
             return nil
         }
         
-        return AppStoreValidateResult(otterScaleID: otterScaleUserID,
+        return AppStoreValidateResult(internalUserID: internalUserID,
                                       paymentData: paymentData)
     }
 }

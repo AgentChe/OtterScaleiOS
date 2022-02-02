@@ -8,14 +8,14 @@
 protocol StorageProtocol {
     var anonymousID: String { get }
     var externalUserID: String? { get set }
-    var otterScaleUserID: String? { get set }
+    var internalUserID: String? { get set }
     var paymentData: PaymentData? { get set }
 }
 
 final class Storage: StorageProtocol {
     enum Constants {
         static let externalUserIDKey = "otter.scale.ios_external_user_id_key"
-        static let otterScaleUserIDKey = "otter.scale.ios_otter_scale_user_id_key"
+        static let internalUserIDKey = "otter.scale.ios_internal_user_id_key"
         static let paymentDataKey = "otter.scale.ios_payment_data_key"
     }
     
@@ -38,12 +38,12 @@ final class Storage: StorageProtocol {
         }
     }
     
-    var otterScaleUserID: String? {
+    var internalUserID: String? {
         set(value) {
-            UserDefaults.standard.set(value, forKey: Constants.otterScaleUserIDKey)
+            UserDefaults.standard.set(value, forKey: Constants.internalUserIDKey)
         }
         get {
-            UserDefaults.standard.string(forKey: Constants.otterScaleUserIDKey)
+            UserDefaults.standard.string(forKey: Constants.internalUserIDKey)
         }
     }
     

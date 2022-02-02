@@ -50,8 +50,8 @@ extension OtterScaleInteractor {
         userManager.set(properties: properties)
     }
     
-    func getOtterScaleID() -> String {
-        storage.otterScaleUserID ?? storage.anonymousID
+    func getInternalID() -> String {
+        storage.internalUserID ?? storage.anonymousID
     }
     
     func getPaymentData() -> PaymentData? {

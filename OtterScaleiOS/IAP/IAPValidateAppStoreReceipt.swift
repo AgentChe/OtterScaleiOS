@@ -42,7 +42,7 @@ extension IAPValidateAppStoreReceipt {
         let request = ValidateAppStoreReceiptRequest(apiKey: apiEnvironment.apiKey,
                                                      anonymousID: storage.anonymousID,
                                                      externalUserID: storage.externalUserID,
-                                                     otterScaleUserID: storage.otterScaleUserID,
+                                                     internalUserID: storage.internalUserID,
                                                      appStoreReceipt: appStoreReceipt,
                                                      prices: prices)
         
