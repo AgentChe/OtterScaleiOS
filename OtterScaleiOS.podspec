@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "OtterScaleiOS"
-  spec.version      = "0.0.1"
+  spec.version      = "1.1"
   spec.summary      = "A CocoaPods library written in Swift"
 
   spec.homepage     = "https://github.com/AgentChe/OtterScaleiOS"
