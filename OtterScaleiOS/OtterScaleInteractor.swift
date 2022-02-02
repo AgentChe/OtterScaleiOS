@@ -46,6 +46,11 @@ extension OtterScaleInteractor {
         }
     }
     
+    func set(internalUserID: String) {
+        storage.internalUserID = internalUserID
+        updatePaymentData(forceValidation: true)
+    }
+    
     func set(properties: [String: Any]) {
         userManager.set(properties: properties)
     }

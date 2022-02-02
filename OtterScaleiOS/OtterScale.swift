@@ -21,6 +21,10 @@ public extension OtterScale {
         interactor.set(userID: userID)
     }
     
+    func set(internalUserID: String) {
+        interactor.set(internalUserID: internalUserID)
+    }
+    
     func set(properties: [String: Any]) {
         interactor.set(properties: properties)
     }
