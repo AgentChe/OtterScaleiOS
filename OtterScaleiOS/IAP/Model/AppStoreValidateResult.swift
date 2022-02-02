@@ -6,6 +6,6 @@
 //
 
 struct AppStoreValidateResult {
-    let internalUserID: String
+    let internalUserID: String?
     let paymentData: PaymentData
 }

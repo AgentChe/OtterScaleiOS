@@ -113,7 +113,7 @@ private extension ViewController {
     
     @objc
     func getOtterScaleIDTapped() {
-        let id = OtterScale.shared.getOtterScaleID()
+        let id = OtterScale.shared.getInternalID()
         print(id)
     }
     
