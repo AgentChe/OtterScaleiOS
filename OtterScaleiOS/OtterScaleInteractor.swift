@@ -55,6 +55,10 @@ extension OtterScaleInteractor {
         userManager.set(properties: properties)
     }
     
+    func getAnonymousID() -> String {
+        storage.anonymousID
+    }
+    
     func getInternalID() -> String {
         storage.internalUserID ?? storage.anonymousID
     }
