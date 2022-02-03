@@ -91,9 +91,11 @@ extension IAPValidateAppStoreReceipt {
     
     func merge(paymentData: PaymentData, cached: PaymentData?, internalUserID: String?) -> AppStoreValidateResult {
         let subscriptions = SubscriptionsPaymentData(appleAppStore: paymentData.subscriptions.appleAppStore,
-                                                     googlePlay: cached?.subscriptions.googlePlay ?? [])
+                                                     googlePlay: cached?.subscriptions.googlePlay ?? [],
+                                                     stripe: cached?.subscriptions.stripe ?? [])
         let nonConsumables = NonConsumablesPaymentData(appleAppStore: paymentData.nonConsumables.appleAppStore,
-                                                       googlePlay: cached?.nonConsumables.googlePlay ?? [])
+                                                       googlePlay: cached?.nonConsumables.googlePlay ?? [],
+                                                       stripe: cached?.nonConsumables.googlePlay ?? [])
         
         let data = PaymentData(subscriptions: subscriptions,
                                nonConsumables: nonConsumables)

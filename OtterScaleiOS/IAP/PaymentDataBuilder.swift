@@ -17,9 +17,11 @@ final class PaymentDataBuilder: PaymentDataBuilderProtocol {
         let nonConsumablesProducts = nonConsumables.compactMap { buildNonConsumable(from: $0) }
         
         let subscriptionsPaymentData = SubscriptionsPaymentData(appleAppStore: subscriptionsProducts,
-                                                                googlePlay: [])
+                                                                googlePlay: [],
+                                                                stripe: [])
         let nonConsumablesPaymentData = NonConsumablesPaymentData(appleAppStore: nonConsumablesProducts,
-                                                                  googlePlay: [])
+                                                                  googlePlay: [],
+                                                                  stripe: [])
         
         return PaymentData(subscriptions: subscriptionsPaymentData,
                            nonConsumables: nonConsumablesPaymentData)
