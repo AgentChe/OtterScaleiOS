@@ -28,6 +28,7 @@
 		DE5FF631278C36930018F7DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF630278C36930018F7DA /* Assets.xcassets */; };
 		DE5FF634278C36930018F7DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5FF632278C36930018F7DA /* LaunchScreen.storyboard */; };
 		DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF63A278C38850018F7DA /* OtterScale.swift */; };
+		DE93790727C5F8230073F27C /* UserUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE93790627C5F8230073F27C /* UserUpdater.swift */; };
 		DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA4048278D9248007A76EB /* NetworkSession.swift */; };
 		DEBA404B278D9674007A76EB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA404A278D9674007A76EB /* EndPoint.swift */; };
 		DEBA404E278D96EF007A76EB /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBA404D278D96EF007A76EB /* APIEnvironment.swift */; };
@@ -98,6 +99,7 @@
 		DE5FF633278C36930018F7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE5FF635278C36930018F7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE5FF63A278C38850018F7DA /* OtterScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterScale.swift; sourceTree = "<group>"; };
+		DE93790627C5F8230073F27C /* UserUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdater.swift; sourceTree = "<group>"; };
 		DEBA4048278D9248007A76EB /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		DEBA404A278D9674007A76EB /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		DEBA404D278D96EF007A76EB /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 			children = (
 				DEE193292794771400658DD9 /* Request */,
 				DEE1932C2794939F00658DD9 /* UserManager.swift */,
+				DE93790627C5F8230073F27C /* UserUpdater.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				DEE1930E2792C79400658DD9 /* AppStoreValidateResult.swift in Sources */,
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
 				DE0C897827A95DB5006AC291 /* ReceiptReadingError.swift in Sources */,
+				DE93790727C5F8230073F27C /* UserUpdater.swift in Sources */,
 				DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */,
 				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */,
@@ -805,7 +809,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = wed.OtterScaleiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -837,7 +841,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = wed.OtterScaleiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

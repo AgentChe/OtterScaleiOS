@@ -22,6 +22,8 @@ final class OtterScaleInteractor {
     
     private lazy var userManager = UserManager(apiEnvironment: apiEnvironment,
                                                storage: storage)
+    private lazy var userUpdater = UserUpdater(manager: userManager,
+                                               mediator: iapMediator)
 }
 
 // MARK: Internal
@@ -31,6 +33,7 @@ extension OtterScaleInteractor {
         
         apiEnvironment = APIEnvironment(host: host, apiKey: apiKey)
         
+        initializeInternalLaunch()
         startPaymentsObserve()
         initializeForFirstLaunch()
         initializeForColdLaunch()
@@ -106,6 +109,10 @@ private extension OtterScaleInteractor {
         
         analyticsManager.syncADServiceToken()
         analyticsManager.registerInstall()
+    }
+    
+    func initializeInternalLaunch() {
+        userUpdater.startTracking()
     }
     
     func initializeForColdLaunch() {
