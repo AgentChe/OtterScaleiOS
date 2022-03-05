@@ -26,7 +26,8 @@ struct RegisterInstallRequest: EndPoint {
             "anonymous_id": anonymousID,
             "currency": currency,
             "store_country": country,
-            "locale": locale
+            "locale": locale,
+            "platform": 1
         ]
     }
     
