@@ -19,7 +19,8 @@ final class UserManager: UserManagerProtocol {
     private var storage: StorageProtocol
     private let requestDispatcher: RequestDispatcherProtocol
     
-    private lazy var operations = [String: APIOperation]()
+    private lazy var operations = [String: APIOperationProtocol]()
+    private lazy var operationWrapper = APIOperationWrapper()
     
     init(apiEnvironment: APIEnvironmentProtocol,
          storage: StorageProtocol) {
@@ -49,7 +50,7 @@ extension UserManager {
         
         operations[key] = operation
         
-        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+        operationWrapper.execute(operation: operation, dispatcher: requestDispatcher) { [weak self] response in
             if let response = response {
                 let result = mapper.map(response: response)
                 
@@ -80,7 +81,7 @@ extension UserManager {
         
         operations[key] = operation
         
-        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+        operationWrapper.execute(operation: operation, dispatcher: requestDispatcher) { [weak self] response in
             if let response = response {
                 let result = mapper.map(response: response)
                 completion?(result)

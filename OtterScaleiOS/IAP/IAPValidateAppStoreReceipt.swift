@@ -17,6 +17,7 @@ final class IAPValidateAppStoreReceipt: IAPValidateAppStoreReceiptProtocol {
     }
     
     private var operation: APIOperation?
+    private lazy var operationWrapper = APIOperationWrapper()
     
     private let storage: StorageProtocol
     private let requestDispatcher: RequestDispatcherProtocol
@@ -54,7 +55,7 @@ extension IAPValidateAppStoreReceipt {
         
         operation = APIOperation(endPoint: request)
         
-        operation?.execute(dispatcher: requestDispatcher) { [weak self] result in
+        operationWrapper.execute(operation: operation!, dispatcher: requestDispatcher) { [weak self] result in
             guard let self = self else {
                 return
             }

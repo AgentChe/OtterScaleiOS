@@ -16,6 +16,7 @@ final class AnalyticsManager: AnalyticsManagerProtocol {
     private let requestDispatcher: RequestDispatcherProtocol
     
     private lazy var operations = [String: APIOperationProtocol]()
+    private lazy var operationWrapper = APIOperationWrapper()
     
     init(apiEnvironment: APIEnvironmentProtocol,
          storage: StorageProtocol) {
@@ -42,7 +43,7 @@ extension AnalyticsManager {
         
         operations[key] = operation
         
-        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+        operationWrapper.execute(operation: operation, dispatcher: requestDispatcher) { [weak self] response in
             self?.operations.removeValue(forKey: key)
         }
     }
@@ -59,7 +60,7 @@ extension AnalyticsManager {
         
         operations[key] = operation
         
-        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+        operationWrapper.execute(operation: operation, dispatcher: requestDispatcher) { [weak self] response in
             self?.operations.removeValue(forKey: key)
         }
     }

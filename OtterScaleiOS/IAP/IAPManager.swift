@@ -26,7 +26,8 @@ final class IAPManager: IAPManagerProtocol {
     private let requestDispatcher: RequestDispatcherProtocol
     private let mediator: IAPMediatorProtocol
     
-    private lazy var operations = [String: Any]()
+    private lazy var operations = [String: APIOperationProtocol]()
+    private lazy var operationWrapper = APIOperationWrapper()
     
     init(apiEnvironment: APIEnvironmentProtocol,
          storage: StorageProtocol,
@@ -107,7 +108,7 @@ extension IAPManager {
         
         operations[key] = operation
         
-        operation.execute(dispatcher: requestDispatcher) { [weak self] response in
+        operationWrapper.execute(operation: operation, dispatcher: requestDispatcher) { [weak self] response in
             guard let self = self else {
                 return
             }
