@@ -7,5 +7,6 @@
 
 struct AppStoreValidateResult {
     let internalUserID: String?
+    let externalUserID: String?
     let paymentData: PaymentData
 }
