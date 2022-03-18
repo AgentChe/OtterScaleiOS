@@ -6,7 +6,7 @@
 //
 
 protocol IAPMediatorProtocol {
-    func notifyAbout(result: PaymentData?)
+    func notifyAbout(result: AppStoreValidateResult?)
     func add(delegate: OtterScaleReceiptValidationDelegate)
     func remove(delegate: OtterScaleReceiptValidationDelegate)
 }
@@ -18,7 +18,7 @@ final class IAPMediator: IAPMediatorProtocol {
     
     private init() {}
     
-    func notifyAbout(result: PaymentData?) {
+    func notifyAbout(result: AppStoreValidateResult?) {
         delegates.forEach { $0.weak?.otterScaleDidValidatedReceipt(with: result) }
     }
     

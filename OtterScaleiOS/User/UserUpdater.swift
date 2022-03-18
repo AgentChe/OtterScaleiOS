@@ -32,7 +32,7 @@ extension UserUpdater {
 
 // MARK: OtterScaleReceiptValidationDelegate
 extension UserUpdater: OtterScaleReceiptValidationDelegate {
-    func otterScaleDidValidatedReceipt(with result: PaymentData?) {
+    func otterScaleDidValidatedReceipt(with result: AppStoreValidateResult?) {
         manager.set(properties: ["currency": infoHelper.currencyCode ?? "",
                                  "country": infoHelper.countryCode ?? "",
                                  "locale": infoHelper.locale ?? ""],

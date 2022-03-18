@@ -81,7 +81,7 @@ extension IAPManager {
                 self.storage.paymentData = result.paymentData
             }
             
-            self.mediator.notifyAbout(result: result?.paymentData)
+            self.mediator.notifyAbout(result: result)
             
             completion?(result)
         }

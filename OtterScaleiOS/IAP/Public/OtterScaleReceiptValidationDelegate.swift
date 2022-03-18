@@ -6,5 +6,5 @@
 //
 
 public protocol OtterScaleReceiptValidationDelegate: AnyObject {
-    func otterScaleDidValidatedReceipt(with result: PaymentData?)
+    func otterScaleDidValidatedReceipt(with result: AppStoreValidateResult?)
 }
