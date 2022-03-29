@@ -22,6 +22,7 @@
 		DE0C897827A95DB5006AC291 /* ReceiptReadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897727A95DB5006AC291 /* ReceiptReadingError.swift */; };
 		DE0C897A27A95DF8006AC291 /* AppStoreReceiptParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897927A95DF8006AC291 /* AppStoreReceiptParser.swift */; };
 		DE0C897C27A96A78006AC291 /* PaymentDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */; };
+		DE1CA9B127F3155700C66DAD /* UsedProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA9B027F3155700C66DAD /* UsedProducts.swift */; };
 		DE2B10EC27DF8ABD005280DB /* APIOperationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B10EB27DF8ABD005280DB /* APIOperationWrapper.swift */; };
 		DE5FF61B278C364D0018F7DA /* OtterScaleiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5FF628278C36910018F7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF627278C36910018F7DA /* AppDelegate.swift */; };
@@ -91,6 +92,7 @@
 		DE0C897727A95DB5006AC291 /* ReceiptReadingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptReadingError.swift; sourceTree = "<group>"; };
 		DE0C897927A95DF8006AC291 /* AppStoreReceiptParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReceiptParser.swift; sourceTree = "<group>"; };
 		DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataBuilder.swift; sourceTree = "<group>"; };
+		DE1CA9B027F3155700C66DAD /* UsedProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedProducts.swift; sourceTree = "<group>"; };
 		DE2B10EB27DF8ABD005280DB /* APIOperationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperationWrapper.swift; sourceTree = "<group>"; };
 		DE5FF617278C364D0018F7DA /* OtterScaleiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OtterScaleiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtterScaleiOS.h; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				DEE193532796CC8C00658DD9 /* IAPProduct.swift */,
 				DEE193572796D51200658DD9 /* IAPPaymentTransaction.swift */,
 				DEE193592796FD4600658DD9 /* IAPPrice.swift */,
+				DE1CA9B027F3155700C66DAD /* UsedProducts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				DEBA4056278DB8E2007A76EB /* RequestDispatcher.swift in Sources */,
 				DE0C896427A95C5D006AC291 /* ISO8601DateFormatter+Extensions.swift in Sources */,
 				DEBA4049278D9248007A76EB /* NetworkSession.swift in Sources */,
+				DE1CA9B127F3155700C66DAD /* UsedProducts.swift in Sources */,
 				DE2B10EC27DF8ABD005280DB /* APIOperationWrapper.swift in Sources */,
 				DEE193062792B54A00658DD9 /* AppStoreReceiptSource.swift in Sources */,
 				DEE193362794994F00658DD9 /* OtterScaleInteractor.swift in Sources */,
@@ -813,7 +817,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = wed.OtterScaleiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -845,7 +849,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = wed.OtterScaleiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

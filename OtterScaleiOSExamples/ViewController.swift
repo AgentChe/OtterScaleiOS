@@ -149,7 +149,7 @@ private extension ViewController {
 
 // MARK: OtterScaleReceiptValidationDelegate
 extension ViewController: OtterScaleReceiptValidationDelegate {
-    func otterScaleDidValidatedReceipt(with result: PaymentData?) {
+    func otterScaleDidValidatedReceipt(with result: AppStoreValidateResult?) {
         print(result)
     }
 }

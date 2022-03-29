@@ -83,10 +83,15 @@ extension IAPValidateAppStoreReceipt {
         
         let paymentData = paymentDataBuilder.build(purchases: receipt.inAppPurchases)
         
+        let usedProducts = UsedProducts(appleAppStore: [],
+                                        googlePlay: [],
+                                        stripe: [])
+        
         let result = merge(paymentData: paymentData,
                            cached: storage.paymentData,
                            internalUserID: storage.internalUserID,
-                           externalUserID: storage.externalUserID)
+                           externalUserID: storage.externalUserID,
+                           usedProducts: usedProducts)
         
         return result
     }
@@ -94,7 +99,8 @@ extension IAPValidateAppStoreReceipt {
     func merge(paymentData: PaymentData,
                cached: PaymentData?,
                internalUserID: String?,
-               externalUserID: String?) -> AppStoreValidateResult {
+               externalUserID: String?,
+               usedProducts: UsedProducts) -> AppStoreValidateResult {
         let subscriptions = SubscriptionsPaymentData(appleAppStore: paymentData.subscriptions.appleAppStore,
                                                      googlePlay: cached?.subscriptions.googlePlay ?? [],
                                                      stripe: cached?.subscriptions.stripe ?? [])
@@ -107,6 +113,7 @@ extension IAPValidateAppStoreReceipt {
         
         return AppStoreValidateResult(internalUserID: internalUserID,
                                       externalUserID: externalUserID,
-                                      paymentData: data)
+                                      paymentData: data,
+                                      usedProducts: usedProducts)
     }
 }

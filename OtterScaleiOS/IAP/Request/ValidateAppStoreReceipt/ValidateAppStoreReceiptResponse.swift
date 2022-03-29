@@ -25,9 +25,16 @@ final class ValidateAppStoreReceiptResponse: ValidateAppStoreReceiptResponseProt
         let internalUserID = data["internal_user_id"] as? String
         let externalUserID = data["external_user_id"] as? String
         
+        let usedProductsJSON = data["used_products"] as? [String: Any] ?? [:]
+        let usedProducts = usedProducts(from: usedProductsJSON)
+        
+        print(usedProductsJSON)
+        print(usedProducts)
+        
         return AppStoreValidateResult(internalUserID: internalUserID,
                                       externalUserID: externalUserID,
-                                      paymentData: paymentData)
+                                      paymentData: paymentData,
+                                      usedProducts: usedProducts)
     }
 }
 
@@ -109,5 +116,15 @@ private extension ValidateAppStoreReceiptResponse {
         
         return NonConsumablePaymentProduct(productID: productID,
                                            valid: valid)
+    }
+    
+    func usedProducts(from json: [String: Any]) -> UsedProducts {
+        let appleAppStore = json["apple_app_store"] as? [String] ?? []
+        let googlePlay = json["google_play"] as? [String] ?? []
+        let stripe = json["stripe"] as? [String] ?? []
+        
+        return UsedProducts(appleAppStore: appleAppStore,
+                            googlePlay: googlePlay,
+                            stripe: stripe)
     }
 }
