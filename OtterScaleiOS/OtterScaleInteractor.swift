@@ -78,6 +78,10 @@ extension OtterScaleInteractor {
         storage.paymentData?.nonConsumables
     }
     
+    func getUsedProducts() -> UsedProducts? {
+        storage.usedProducts
+    }
+    
     func updatePaymentData(forceValidation: Bool = false,
                            completion: ((PaymentData?) -> Void)? = nil) {
         let finish: (AppStoreValidateResult?) -> Void = { result in

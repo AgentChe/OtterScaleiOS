@@ -83,15 +83,13 @@ extension IAPValidateAppStoreReceipt {
         
         let paymentData = paymentDataBuilder.build(purchases: receipt.inAppPurchases)
         
-        let usedProducts = UsedProducts(appleAppStore: [],
-                                        googlePlay: [],
-                                        stripe: [])
-        
         let result = merge(paymentData: paymentData,
                            cached: storage.paymentData,
                            internalUserID: storage.internalUserID,
                            externalUserID: storage.externalUserID,
-                           usedProducts: usedProducts)
+                           usedProducts: storage.usedProducts ?? UsedProducts(appleAppStore: [],
+                                                                              googlePlay: [],
+                                                                              stripe: []))
         
         return result
     }

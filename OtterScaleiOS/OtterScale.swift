@@ -49,6 +49,10 @@ public extension OtterScale {
         interactor.getNonConsumables()
     }
     
+    func getUsedProducts() -> UsedProducts? {
+        interactor.getUsedProducts()
+    }
+    
     func updatePaymentData(forceValidation: Bool,
                            completion: ((PaymentData?) -> Void)? = nil) {
         interactor.updatePaymentData(forceValidation: forceValidation,
