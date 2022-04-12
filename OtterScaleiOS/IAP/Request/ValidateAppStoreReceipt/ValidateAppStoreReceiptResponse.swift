@@ -50,14 +50,17 @@ private extension ValidateAppStoreReceiptResponse {
         let appleAppStoreArray = subscriptionsData["apple_app_store"] as? [[String: Any]] ?? []
         let googlePlayArray = subscriptionsData["google_play"] as? [[String: Any]] ?? []
         let stripeArray = subscriptionsData["stripe"] as? [[String: Any]] ?? []
+        let paypalArray = subscriptionsData["paypal"] as? [[String: Any]] ?? []
         
         let appleAppStore = appleAppStoreArray.compactMap { subscriptionPaymentProduct(from: $0) }
         let googlePlay = googlePlayArray.compactMap { subscriptionPaymentProduct(from: $0) }
         let stripe = stripeArray.compactMap { subscriptionPaymentProduct(from: $0) }
+        let paypal = paypalArray.compactMap { subscriptionPaymentProduct(from: $0) }
         
         return SubscriptionsPaymentData(appleAppStore: appleAppStore,
                                         googlePlay: googlePlay,
-                                        stripe: stripe)
+                                        stripe: stripe,
+                                        paypal: paypal)
     }
     
     func subscriptionPaymentProduct(from json: [String: Any]) -> SubscriptionPaymentProduct? {
@@ -96,14 +99,17 @@ private extension ValidateAppStoreReceiptResponse {
         let appleAppStoreArray = nonConsumablesData["apple_app_store"] as? [[String: Any]] ?? []
         let googlePlayArray = nonConsumablesData["google_play"] as? [[String: Any]] ?? []
         let stripeArray = nonConsumablesData["stripe"] as? [[String: Any]] ?? []
+        let paypalArray = nonConsumablesData["paypal"] as? [[String: Any]] ?? []
         
         let appleAppStore = appleAppStoreArray.compactMap { nonConsumablePaymentProduct(from: $0) }
         let googlePlay = googlePlayArray.compactMap { nonConsumablePaymentProduct(from: $0) }
         let stripe = stripeArray.compactMap { nonConsumablePaymentProduct(from: $0) }
+        let paypal = paypalArray.compactMap { nonConsumablePaymentProduct(from: $0) }
         
         return NonConsumablesPaymentData(appleAppStore: appleAppStore,
                                          googlePlay: googlePlay,
-                                         stripe: stripe)
+                                         stripe: stripe,
+                                         paypal: paypal)
     }
     
     func nonConsumablePaymentProduct(from json: [String: Any]) -> NonConsumablePaymentProduct? {

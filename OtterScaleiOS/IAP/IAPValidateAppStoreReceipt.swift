@@ -101,10 +101,12 @@ extension IAPValidateAppStoreReceipt {
                usedProducts: UsedProducts) -> AppStoreValidateResult {
         let subscriptions = SubscriptionsPaymentData(appleAppStore: paymentData.subscriptions.appleAppStore,
                                                      googlePlay: cached?.subscriptions.googlePlay ?? [],
-                                                     stripe: cached?.subscriptions.stripe ?? [])
+                                                     stripe: cached?.subscriptions.stripe ?? [],
+                                                     paypal: cached?.subscriptions.paypal ?? [])
         let nonConsumables = NonConsumablesPaymentData(appleAppStore: paymentData.nonConsumables.appleAppStore,
                                                        googlePlay: cached?.nonConsumables.googlePlay ?? [],
-                                                       stripe: cached?.nonConsumables.googlePlay ?? [])
+                                                       stripe: cached?.nonConsumables.googlePlay ?? [],
+                                                       paypal: cached?.nonConsumables.paypal ?? [])
         
         let data = PaymentData(subscriptions: subscriptions,
                                nonConsumables: nonConsumables)

@@ -14,6 +14,7 @@ public struct SubscriptionsPaymentData: Codable {
     public let appleAppStore: [SubscriptionPaymentProduct]
     public let googlePlay: [SubscriptionPaymentProduct]
     public let stripe: [SubscriptionPaymentProduct]
+    public let paypal: [SubscriptionPaymentProduct]
 }
 
 public struct SubscriptionPaymentProduct: Codable {
@@ -32,6 +33,7 @@ public struct NonConsumablesPaymentData: Codable {
     public let appleAppStore: [NonConsumablePaymentProduct]
     public let googlePlay: [NonConsumablePaymentProduct]
     public let stripe: [NonConsumablePaymentProduct]
+    public let paypal: [NonConsumablePaymentProduct]
 }
 
 public struct NonConsumablePaymentProduct: Codable {

@@ -18,10 +18,12 @@ final class PaymentDataBuilder: PaymentDataBuilderProtocol {
         
         let subscriptionsPaymentData = SubscriptionsPaymentData(appleAppStore: subscriptionsProducts,
                                                                 googlePlay: [],
-                                                                stripe: [])
+                                                                stripe: [],
+                                                                paypal: [])
         let nonConsumablesPaymentData = NonConsumablesPaymentData(appleAppStore: nonConsumablesProducts,
                                                                   googlePlay: [],
-                                                                  stripe: [])
+                                                                  stripe: [],
+                                                                  paypal: [])
         
         return PaymentData(subscriptions: subscriptionsPaymentData,
                            nonConsumables: nonConsumablesPaymentData)
