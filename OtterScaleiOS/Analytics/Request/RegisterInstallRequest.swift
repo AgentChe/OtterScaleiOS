@@ -29,7 +29,7 @@ struct RegisterInstallRequest: EndPoint {
             "store_country": country,
             "locale": locale,
             "platform": 1,
-            "idfv": idfv
+            "platform_instance_identifier": idfv
         ]
     }
     
