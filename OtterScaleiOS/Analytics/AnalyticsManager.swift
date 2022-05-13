@@ -53,7 +53,8 @@ extension AnalyticsManager {
                                              anonymousID: storage.anonymousID,
                                              currency: infoHelper.currencyCode ?? "",
                                              country: infoHelper.countryCode ?? "",
-                                             locale: infoHelper.locale ?? "")
+                                             locale: infoHelper.locale ?? "",
+                                             idfv: infoHelper.idfv ?? "")
         let operation = APIOperation(endPoint: request)
         
         let key = "register_install_request"

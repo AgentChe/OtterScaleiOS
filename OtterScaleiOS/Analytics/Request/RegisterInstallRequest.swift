@@ -11,6 +11,7 @@ struct RegisterInstallRequest: EndPoint {
     let currency: String
     let country: String
     let locale: String
+    let idfv: String
     
     var path: String {
         "/api/v1/sdk/register_install"
@@ -27,7 +28,8 @@ struct RegisterInstallRequest: EndPoint {
             "currency": currency,
             "store_country": country,
             "locale": locale,
-            "platform": 1
+            "platform": 1,
+            "idfv": idfv
         ]
     }
     

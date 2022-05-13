@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol InfoHelperProtocol {
     var locale: String? { get }
     var currencyCode: String? { get }
     var countryCode: String? { get }
+    var idfv: String? { get }
 }
 
 final class InfoHelper: InfoHelperProtocol {
@@ -28,5 +30,9 @@ final class InfoHelper: InfoHelperProtocol {
     
     var countryCode: String? {
         (Locale.current as NSLocale).countryCode
+    }
+    
+    var idfv: String? {
+        UIDevice.current.identifierForVendor?.uuidString
     }
 }
