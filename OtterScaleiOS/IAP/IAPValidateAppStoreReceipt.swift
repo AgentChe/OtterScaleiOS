@@ -89,7 +89,9 @@ extension IAPValidateAppStoreReceipt {
                            externalUserID: storage.externalUserID,
                            usedProducts: storage.usedProducts ?? UsedProducts(appleAppStore: [],
                                                                               googlePlay: [],
-                                                                              stripe: []))
+                                                                              stripe: []),
+                           userSince: storage.userSince,
+                           accessValidTill: storage.accessValidTill)
         
         return result
     }
@@ -98,7 +100,9 @@ extension IAPValidateAppStoreReceipt {
                cached: PaymentData?,
                internalUserID: String?,
                externalUserID: String?,
-               usedProducts: UsedProducts) -> AppStoreValidateResult {
+               usedProducts: UsedProducts,
+               userSince: String?,
+               accessValidTill: String?) -> AppStoreValidateResult {
         let subscriptions = SubscriptionsPaymentData(appleAppStore: paymentData.subscriptions.appleAppStore,
                                                      googlePlay: cached?.subscriptions.googlePlay ?? [],
                                                      stripe: cached?.subscriptions.stripe ?? [],
@@ -114,6 +118,8 @@ extension IAPValidateAppStoreReceipt {
         return AppStoreValidateResult(internalUserID: internalUserID,
                                       externalUserID: externalUserID,
                                       paymentData: data,
-                                      usedProducts: usedProducts)
+                                      usedProducts: usedProducts,
+                                      userSince: userSince,
+                                      accessValidTill: accessValidTill)
     }
 }

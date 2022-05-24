@@ -28,13 +28,15 @@ final class ValidateAppStoreReceiptResponse: ValidateAppStoreReceiptResponseProt
         let usedProductsJSON = data["used_products"] as? [String: Any] ?? [:]
         let usedProducts = usedProducts(from: usedProductsJSON)
         
-        print(usedProductsJSON)
-        print(usedProducts)
+        let userSince = data["user_since"] as? String
+        let accessValidTill = data["access_valid_till"] as? String
         
         return AppStoreValidateResult(internalUserID: internalUserID,
                                       externalUserID: externalUserID,
                                       paymentData: paymentData,
-                                      usedProducts: usedProducts)
+                                      usedProducts: usedProducts,
+                                      userSince: userSince,
+                                      accessValidTill: accessValidTill)
     }
 }
 

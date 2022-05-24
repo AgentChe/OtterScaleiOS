@@ -80,6 +80,8 @@ extension IAPManager {
                 self.storage.externalUserID = result.externalUserID
                 self.storage.paymentData = result.paymentData
                 self.storage.usedProducts = result.usedProducts
+                self.storage.userSince = result.userSince
+                self.storage.accessValidTill = result.accessValidTill
             }
             
             self.mediator.notifyAbout(result: result)
@@ -120,6 +122,8 @@ extension IAPManager {
                 self.storage.externalUserID = result.externalUserID
                 self.storage.paymentData = result.paymentData
                 self.storage.usedProducts = result.usedProducts
+                self.storage.userSince = result.userSince
+                self.storage.accessValidTill = result.accessValidTill
                 
                 completion?(result)
             } else {

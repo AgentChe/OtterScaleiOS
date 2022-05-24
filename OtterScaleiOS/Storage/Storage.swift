@@ -11,6 +11,8 @@ protocol StorageProtocol {
     var internalUserID: String? { get set }
     var paymentData: PaymentData? { get set }
     var usedProducts: UsedProducts? { get set }
+    var userSince: String? { get set }
+    var accessValidTill: String? { get set }
 }
 
 final class Storage: StorageProtocol {
@@ -19,6 +21,8 @@ final class Storage: StorageProtocol {
         static let internalUserIDKey = "otter.scale.ios_internal_user_id_key"
         static let paymentDataKey = "otter.scale.ios_payment_data_key"
         static let usedProductsKey = "otter.scale.ios_used_products_key"
+        static let userSinceKey = "otter.scale.ios_user_since"
+        static let accessValidTillKey = "otter.scale.ios_access_valid_till"
     }
     
     private let anonymousIDStorage: AnonymousIDStorageProtocol
@@ -80,6 +84,24 @@ final class Storage: StorageProtocol {
             }
             
             return try? JSONDecoder().decode(UsedProducts.self, from: data)
+        }
+    }
+    
+    var userSince: String? {
+        set(value) {
+            UserDefaults.standard.set(value, forKey: Constants.userSinceKey)
+        }
+        get {
+            UserDefaults.standard.string(forKey: Constants.userSinceKey)
+        }
+    }
+    
+    var accessValidTill: String? {
+        set(value) {
+            UserDefaults.standard.set(value, forKey: Constants.accessValidTillKey)
+        }
+        get {
+            UserDefaults.standard.string(forKey: Constants.accessValidTillKey)
         }
     }
 }

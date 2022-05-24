@@ -10,4 +10,6 @@ public struct AppStoreValidateResult {
     public let externalUserID: String?
     public let paymentData: PaymentData
     public let usedProducts: UsedProducts
+    public let userSince: String?
+    public let accessValidTill: String?
 }

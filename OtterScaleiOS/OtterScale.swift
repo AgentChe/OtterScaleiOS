@@ -53,6 +53,14 @@ public extension OtterScale {
         interactor.getUsedProducts()
     }
     
+    func getUserSince() -> String? {
+        interactor.getUserSince()
+    }
+    
+    func getAccessValidTill() -> String? {
+        interactor.getAccessValidTill()
+    }
+    
     func updatePaymentData(forceValidation: Bool,
                            completion: ((PaymentData?) -> Void)? = nil) {
         interactor.updatePaymentData(forceValidation: forceValidation,
