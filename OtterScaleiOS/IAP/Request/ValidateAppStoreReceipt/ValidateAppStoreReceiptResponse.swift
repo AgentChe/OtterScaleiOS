@@ -22,6 +22,7 @@ final class ValidateAppStoreReceiptResponse: ValidateAppStoreReceiptResponseProt
             return nil
         }
         
+        let userId = data["user_id"] as? Int
         let internalUserID = data["internal_user_id"] as? String
         let externalUserID = data["external_user_id"] as? String
         
@@ -31,7 +32,8 @@ final class ValidateAppStoreReceiptResponse: ValidateAppStoreReceiptResponseProt
         let userSince = data["user_since"] as? String
         let accessValidTill = data["access_valid_till"] as? String
         
-        return AppStoreValidateResult(internalUserID: internalUserID,
+        return AppStoreValidateResult(userId: userId,
+                                      internalUserID: internalUserID,
                                       externalUserID: externalUserID,
                                       paymentData: paymentData,
                                       usedProducts: usedProducts,

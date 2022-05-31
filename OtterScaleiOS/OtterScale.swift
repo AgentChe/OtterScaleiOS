@@ -29,6 +29,10 @@ public extension OtterScale {
         interactor.set(properties: properties)
     }
     
+    func getUserID() -> Int? {
+        interactor.getUserID()
+    }
+    
     func getAnonymousID() -> String {
         interactor.getAnonymousID()
     }

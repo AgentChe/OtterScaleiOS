@@ -76,6 +76,7 @@ extension IAPManager {
             }
             
             if let result = result {
+                self.storage.userId = result.userId
                 self.storage.internalUserID = result.internalUserID
                 self.storage.externalUserID = result.externalUserID
                 self.storage.paymentData = result.paymentData
@@ -118,6 +119,7 @@ extension IAPManager {
             }
             
             if let response = response, let result = mapper.map(response: response) {
+                self.storage.userId = result.userId
                 self.storage.internalUserID = result.internalUserID
                 self.storage.externalUserID = result.externalUserID
                 self.storage.paymentData = result.paymentData
