@@ -29,6 +29,10 @@ public extension OtterScale {
         interactor.set(properties: properties)
     }
     
+    func set(pushNotificationsToken: String) {
+        interactor.set(pushNotificationsToken: pushNotificationsToken)
+    }
+    
     func getUserID() -> Int? {
         interactor.getUserID()
     }

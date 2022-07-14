@@ -14,6 +14,7 @@ protocol StorageProtocol {
     var usedProducts: UsedProducts? { get set }
     var userSince: String? { get set }
     var accessValidTill: String? { get set }
+    var pushNotificationsToken: String? { get set }
 }
 
 final class Storage: StorageProtocol {
@@ -25,6 +26,7 @@ final class Storage: StorageProtocol {
         static let usedProductsKey = "otter.scale.ios_used_products_key"
         static let userSinceKey = "otter.scale.ios_user_since"
         static let accessValidTillKey = "otter.scale.ios_access_valid_till"
+        static let pushNotificationsTokenKey = "otter.scale.ios_push_notifications_token_key"
     }
     
     private let anonymousIDStorage: AnonymousIDStorageProtocol
@@ -113,6 +115,15 @@ final class Storage: StorageProtocol {
         }
         get {
             UserDefaults.standard.string(forKey: Constants.accessValidTillKey)
+        }
+    }
+    
+    var pushNotificationsToken: String? {
+        set(value) {
+            UserDefaults.standard.set(value, forKey: Constants.pushNotificationsTokenKey)
+        }
+        get {
+            UserDefaults.standard.string(forKey: Constants.pushNotificationsTokenKey)
         }
     }
 }

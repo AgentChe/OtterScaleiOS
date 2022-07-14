@@ -23,7 +23,8 @@ final class OtterScaleInteractor {
     private lazy var userManager = UserManager(apiEnvironment: apiEnvironment,
                                                storage: storage)
     private lazy var userUpdater = UserUpdater(manager: userManager,
-                                               mediator: iapMediator)
+                                               mediator: iapMediator,
+                                               storage: storage)
 }
 
 // MARK: Internal
@@ -56,6 +57,13 @@ extension OtterScaleInteractor {
     
     func set(properties: [String: Any]) {
         userManager.set(properties: properties)
+    }
+    
+    func set(pushNotificationsToken: String) {
+        storage.pushNotificationsToken = pushNotificationsToken
+        userManager.set(properties: [
+            "firebase_notification_key": pushNotificationsToken
+        ])
     }
     
     func getUserID() -> Int? {

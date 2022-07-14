@@ -9,6 +9,7 @@ final class UserUpdater {
     private let manager: UserManagerProtocol
     private let mediator: IAPMediatorProtocol
     private let infoHelper: InfoHelperProtocol
+    private let storage: StorageProtocol
     
     deinit {
         mediator.remove(delegate: self)
@@ -16,10 +17,12 @@ final class UserUpdater {
     
     init(manager: UserManagerProtocol,
          mediator: IAPMediatorProtocol,
-         infoHelper: InfoHelperProtocol = InfoHelper()) {
+         infoHelper: InfoHelperProtocol = InfoHelper(),
+         storage: StorageProtocol) {
         self.manager = manager
         self.mediator = mediator
         self.infoHelper = infoHelper
+        self.storage = storage
     }
 }
 
@@ -35,7 +38,8 @@ extension UserUpdater: OtterScaleReceiptValidationDelegate {
     func otterScaleDidValidatedReceipt(with result: AppStoreValidateResult?) {
         manager.set(properties: ["currency": infoHelper.currencyCode ?? "",
                                  "country": infoHelper.countryCode ?? "",
-                                 "locale": infoHelper.locale ?? ""],
+                                 "locale": infoHelper.locale ?? "",
+                                 "firebase_notification_key": storage.pushNotificationsToken ?? ""],
                     mapper: UserSetResponse(),
                     completion: nil)
     }
