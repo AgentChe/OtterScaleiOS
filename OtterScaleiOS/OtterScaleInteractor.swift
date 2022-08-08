@@ -34,10 +34,9 @@ extension OtterScaleInteractor {
         
         apiEnvironment = APIEnvironment(host: host, apiKey: apiKey)
         
-        initializeInternalLaunch()
         startPaymentsObserve()
-        initializeForFirstLaunch()
-        initializeForColdLaunch()
+        initializeInternalLaunch()
+        initializeAuth()
     }
     
     func set(userID: String) {
@@ -126,24 +125,23 @@ extension OtterScaleInteractor {
 
 // MARK: Private
 private extension OtterScaleInteractor {
-    func initializeForFirstLaunch() {
-        guard launches.isFirstLaunch() else {
-            return
-        }
-        
-        analyticsManager.syncADServiceToken()
-        analyticsManager.registerInstall()
-    }
-    
     func initializeInternalLaunch() {
         userUpdater.startTracking()
     }
     
-    func initializeForColdLaunch() {
-        iapManager.validateAppStoreReceipt()
-    }
-    
     func startPaymentsObserve() {
         iapPaymentsObserver.observe()
+    }
+    
+    func initializeAuth() {
+        guard launches.isFirstLaunch() else {
+            iapManager.validateAppStoreReceipt()
+            return
+        }
+        
+        analyticsManager.registerInstall { [weak self] in
+            self?.analyticsManager.syncADServiceToken()
+            self?.iapManager.validateAppStoreReceipt()
+        }
     }
 }
