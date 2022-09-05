@@ -60,22 +60,37 @@ extension IAPValidateAppStoreReceipt {
                 return
             }
             
-            guard
-                let response = result,
-                let appStoreValidateResult = self.mapper.map(response: response)
-            else {
-                let result = self.tryLocalParseReceipt()
-                completion?(result)
-                
-                return
-            }
+            let appStoreValidateResult: AppStoreValidateResult?
             
+            if
+                let response = result,
+                let mapperResult = self.mapper.map(response: response) {
+                if self.hasActiveSubscriptions(paymentData: mapperResult.paymentData) {
+                    appStoreValidateResult = mapperResult
+                } else {
+                    if let local = self.tryLocalParseReceipt() {
+                        if self.hasActiveSubscriptions(paymentData: local.paymentData) {
+                            appStoreValidateResult = local
+                        } else {
+                            appStoreValidateResult = mapperResult
+                        }
+                    } else {
+                        appStoreValidateResult = mapperResult
+                    }
+                }
+            } else {
+                appStoreValidateResult = self.tryLocalParseReceipt()
+            }
+
             completion?(appStoreValidateResult)
             
             self.operation = nil
         }
     }
-    
+}
+
+// MARK: Private
+private extension IAPValidateAppStoreReceipt {
     func tryLocalParseReceipt() -> AppStoreValidateResult? {
         guard let receipt = appStoreReceiptSource.appStoreReceipt(parser: AppStoreReceiptParser()) else {
             return nil
@@ -124,5 +139,21 @@ extension IAPValidateAppStoreReceipt {
                                       usedProducts: usedProducts,
                                       userSince: userSince,
                                       accessValidTill: accessValidTill)
+    }
+    
+    func hasActiveSubscriptions(paymentData: PaymentData) -> Bool {
+        let subscriptions = paymentData.subscriptions.appleAppStore
+            + paymentData.subscriptions.googlePlay
+            + paymentData.subscriptions.stripe
+            + paymentData.subscriptions.paypal
+        let nonConsumables = paymentData.nonConsumables.appleAppStore
+            + paymentData.nonConsumables.googlePlay
+            + paymentData.nonConsumables.stripe
+            + paymentData.nonConsumables.paypal
+
+        let hasValidSubscription = subscriptions.contains(where: { $0.valid })
+        let hasValidNonConsumable = nonConsumables.contains(where: { $0.valid })
+
+        return hasValidSubscription || hasValidNonConsumable
     }
 }
