@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "akonst17" => "akonst17@gmail.com" }
 
-  spec.ios.deployment_target = "12.1"
+  spec.ios.deployment_target = "15.0"
   spec.swift_version = "5"
 
   spec.source        = { :git => "https://github.com/AgentChe/OtterScaleiOS.git", :tag => "#{spec.version}" }
