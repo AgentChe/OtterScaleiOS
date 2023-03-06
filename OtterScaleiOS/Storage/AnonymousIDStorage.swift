@@ -20,7 +20,7 @@ final class AnonymousIDStorage: AnonymousIDStorageProtocol {
             let randomKey = String((0..<64).map{ _ in letters.randomElement()! })
             let result = String(format: "anon_id_%@", randomKey)
             UserDefaults.standard.set(result, forKey: udKey)
-            return randomKey
+            return result
         }
     }
 }
