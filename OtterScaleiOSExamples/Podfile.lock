@@ -1,5 +1,5 @@
 PODS:
-  - OtterScaleiOS (1.21)
+  - OtterScaleiOS (1.23)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  OtterScaleiOS: 4f8201feb7ed886c2ae9ba6b0d9f9ed822650433
+  OtterScaleiOS: fc5d35bda9e17a6c933fea6e254a5a6fa54dd626
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
 PODFILE CHECKSUM: 88c5385c417843c37276d7c042a29c4ad12eaba5
