@@ -75,19 +75,19 @@ public extension OtterScale {
                                      completion: completion)
     }
     
-    func add(delegate: OtterScaleReceiptValidationDelegate) {
+    func addReceiptValidation(delegate: OtterScaleReceiptValidationDelegate) {
         interactor.add(delegate: delegate)
     }
     
-    func remove(delegate: OtterScaleReceiptValidationDelegate) {
+    func removeReceiptValidation(delegate: OtterScaleReceiptValidationDelegate) {
         interactor.remove(delegate: delegate)
     }
     
-    func add(delegate: AnalyticsDelegate) {
+    func addAnalytics(delegate: AnalyticsDelegate) {
         interactor.add(delegate: delegate)
     }
     
-    func remove(delegate: AnalyticsDelegate) {
+    func removeAnalytics(delegate: AnalyticsDelegate) {
         interactor.remove(delegate: delegate)
     }
 }
