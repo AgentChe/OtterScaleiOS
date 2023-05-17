@@ -11,8 +11,10 @@ final class OtterScaleInteractor {
     
     private var apiEnvironment: APIEnvironmentProtocol!
     
+    private lazy var analyticsMediator = AnalyticsMediator.shared
     private lazy var analyticsManager = AnalyticsManager(apiEnvironment: apiEnvironment,
-                                                              storage: storage)
+                                                         storage: storage,
+                                                         analyticsMediator: analyticsMediator)
     
     private lazy var iapMediator = IAPMediator.shared
     private lazy var iapManager = IAPManager(apiEnvironment: apiEnvironment,
@@ -120,6 +122,14 @@ extension OtterScaleInteractor {
     
     func remove(delegate: OtterScaleReceiptValidationDelegate) {
         iapMediator.remove(delegate: delegate)
+    }
+    
+    func add(delegate: AnalyticsDelegate) {
+        analyticsMediator.add(delegate: delegate)
+    }
+    
+    func remove(delegate: AnalyticsDelegate) {
+        analyticsMediator.remove(delegate: delegate)
     }
 }
 

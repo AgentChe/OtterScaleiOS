@@ -24,6 +24,10 @@
 		DE0C897C27A96A78006AC291 /* PaymentDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */; };
 		DE1CA9B127F3155700C66DAD /* UsedProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA9B027F3155700C66DAD /* UsedProducts.swift */; };
 		DE2B10EC27DF8ABD005280DB /* APIOperationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B10EB27DF8ABD005280DB /* APIOperationWrapper.swift */; };
+		DE5C62572A14B02400ECAB17 /* ADServiceAttributionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C62562A14B02400ECAB17 /* ADServiceAttributionsModel.swift */; };
+		DE5C625A2A14B0D500ECAB17 /* SendADServiceTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C62592A14B0D500ECAB17 /* SendADServiceTokenResponse.swift */; };
+		DE5C625C2A14B5AD00ECAB17 /* AnalyticsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C625B2A14B5AD00ECAB17 /* AnalyticsMediator.swift */; };
+		DE5C625F2A14B62300ECAB17 /* AnalyticsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5C625E2A14B62300ECAB17 /* AnalyticsDelegate.swift */; };
 		DE5FF61B278C364D0018F7DA /* OtterScaleiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5FF628278C36910018F7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF627278C36910018F7DA /* AppDelegate.swift */; };
 		DE5FF62C278C36910018F7DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FF62B278C36910018F7DA /* ViewController.swift */; };
@@ -94,6 +98,10 @@
 		DE0C897B27A96A78006AC291 /* PaymentDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDataBuilder.swift; sourceTree = "<group>"; };
 		DE1CA9B027F3155700C66DAD /* UsedProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsedProducts.swift; sourceTree = "<group>"; };
 		DE2B10EB27DF8ABD005280DB /* APIOperationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIOperationWrapper.swift; sourceTree = "<group>"; };
+		DE5C62562A14B02400ECAB17 /* ADServiceAttributionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADServiceAttributionsModel.swift; sourceTree = "<group>"; };
+		DE5C62592A14B0D500ECAB17 /* SendADServiceTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendADServiceTokenResponse.swift; sourceTree = "<group>"; };
+		DE5C625B2A14B5AD00ECAB17 /* AnalyticsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsMediator.swift; sourceTree = "<group>"; };
+		DE5C625E2A14B62300ECAB17 /* AnalyticsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDelegate.swift; sourceTree = "<group>"; };
 		DE5FF617278C364D0018F7DA /* OtterScaleiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OtterScaleiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5FF61A278C364D0018F7DA /* OtterScaleiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtterScaleiOS.h; sourceTree = "<group>"; };
 		DE5FF625278C36910018F7DA /* OtterScaleiOSExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtterScaleiOSExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +238,31 @@
 			path = Builders;
 			sourceTree = "<group>";
 		};
+		DE5C62552A14AFBC00ECAB17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C62562A14B02400ECAB17 /* ADServiceAttributionsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE5C62582A14B0C700ECAB17 /* SendADServiceToken */ = {
+			isa = PBXGroup;
+			children = (
+				DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */,
+				DE5C62592A14B0D500ECAB17 /* SendADServiceTokenResponse.swift */,
+			);
+			path = SendADServiceToken;
+			sourceTree = "<group>";
+		};
+		DE5C625D2A14B60600ECAB17 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C625E2A14B62300ECAB17 /* AnalyticsDelegate.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		DE5FF60D278C364C0018F7DA = {
 			isa = PBXGroup;
 			children = (
@@ -329,9 +362,12 @@
 		DEE192F32791A4CB00658DD9 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				DE5C625D2A14B60600ECAB17 /* Public */,
+				DE5C62552A14AFBC00ECAB17 /* Model */,
 				DEE192F62791A54900658DD9 /* Request */,
 				DEE192F42791A4D700658DD9 /* ADServiceToken.swift */,
 				DEE192F92791A60400658DD9 /* AnalyticsManager.swift */,
+				DE5C625B2A14B5AD00ECAB17 /* AnalyticsMediator.swift */,
 			);
 			path = Analytics;
 			sourceTree = "<group>";
@@ -339,7 +375,7 @@
 		DEE192F62791A54900658DD9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				DEE192F72791A55A00658DD9 /* SendADServiceTokenRequest.swift */,
+				DE5C62582A14B0C700ECAB17 /* SendADServiceToken */,
 				DEE1933B27954B6F00658DD9 /* RegisterInstallRequest.swift */,
 			);
 			path = Request;
@@ -594,6 +630,7 @@
 				DEE192FD2791B6DB00658DD9 /* IAPManager.swift in Sources */,
 				DE0C896B27A95D05006AC291 /* InAppPurchase.swift in Sources */,
 				DEE1932B2794772100658DD9 /* UserSetRequest.swift in Sources */,
+				DE5C625A2A14B0D500ECAB17 /* SendADServiceTokenResponse.swift in Sources */,
 				DEBA4052278D98C6007A76EB /* URLRequest+EndPoint.swift in Sources */,
 				DEE193102792C7D600658DD9 /* ValidateAppStoreReceiptResponse.swift in Sources */,
 				DE0C897A27A95DF8006AC291 /* AppStoreReceiptParser.swift in Sources */,
@@ -605,6 +642,7 @@
 				DEE1935A2796FD4600658DD9 /* IAPPrice.swift in Sources */,
 				DEE192FA2791A60400658DD9 /* AnalyticsManager.swift in Sources */,
 				DE0C896D27A95D21006AC291 /* AppStoreReceipt.swift in Sources */,
+				DE5C62572A14B02400ECAB17 /* ADServiceAttributionsModel.swift in Sources */,
 				DEBA4054278DB391007A76EB /* APIOperation.swift in Sources */,
 				DE0C896927A95CEB006AC291 /* ASN1Container.swift in Sources */,
 				DEE192EA2791704500658DD9 /* NumberLaunches.swift in Sources */,
@@ -640,9 +678,11 @@
 				DE5FF63B278C38850018F7DA /* OtterScale.swift in Sources */,
 				DE0C897827A95DB5006AC291 /* ReceiptReadingError.swift in Sources */,
 				DE93790727C5F8230073F27C /* UserUpdater.swift in Sources */,
+				DE5C625C2A14B5AD00ECAB17 /* AnalyticsMediator.swift in Sources */,
 				DEE1934A27969FCB00658DD9 /* IAPPaymentsObserver.swift in Sources */,
 				DEE192F52791A4D700658DD9 /* ADServiceToken.swift in Sources */,
 				DEE19332279494BF00658DD9 /* UserSetResponse.swift in Sources */,
+				DE5C625F2A14B62300ECAB17 /* AnalyticsDelegate.swift in Sources */,
 				DE0C896027A95C3A006AC291 /* UInt8+Extensions.swift in Sources */,
 				DE0C897C27A96A78006AC291 /* PaymentDataBuilder.swift in Sources */,
 				DEE192E3279157C900658DD9 /* Storage.swift in Sources */,

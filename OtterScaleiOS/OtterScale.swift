@@ -82,4 +82,12 @@ public extension OtterScale {
     func remove(delegate: OtterScaleReceiptValidationDelegate) {
         interactor.remove(delegate: delegate)
     }
+    
+    func add(delegate: AnalyticsDelegate) {
+        interactor.add(delegate: delegate)
+    }
+    
+    func remove(delegate: AnalyticsDelegate) {
+        interactor.remove(delegate: delegate)
+    }
 }
