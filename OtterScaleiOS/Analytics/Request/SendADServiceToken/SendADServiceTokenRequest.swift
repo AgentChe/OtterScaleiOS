@@ -22,7 +22,8 @@ struct SendADServiceTokenRequest: EndPoint {
         [
             "_api_key": apiKey,
             "anonymous_id": anonymousId,
-            "token": token
+            "token": token,
+            "await_response": true
         ]
     }
     
