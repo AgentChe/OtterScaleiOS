@@ -70,9 +70,11 @@ public extension OtterScale {
     }
     
     func updatePaymentData(forceValidation: Bool,
-                           completion: ((PaymentData?) -> Void)? = nil) {
+                           completion: ((PaymentData?) -> Void)? = nil,
+                           notifyMediator: Bool = true) {
         interactor.updatePaymentData(forceValidation: forceValidation,
-                                     completion: completion)
+                                     completion: completion,
+                                     notifyMediator: notifyMediator)
     }
     
     func addReceiptValidation(delegate: OtterScaleReceiptValidationDelegate) {

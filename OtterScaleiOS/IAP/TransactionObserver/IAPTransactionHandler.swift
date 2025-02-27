@@ -31,7 +31,7 @@ extension IAPTransactionHandler {
                 return
             }
             
-            self.iapManager.validateAppStoreReceipt(prices: prices, completion: nil)
+            self.iapManager.validateAppStoreReceipt(prices: prices, completion: nil, notifyMediator: true)
         }
         
         retrievePrices(ids: ids, completion: validate)

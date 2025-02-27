@@ -47,13 +47,13 @@ extension OtterScaleInteractor {
                 return
             }
             
-            self.updatePaymentData()
+            self.updatePaymentData(notifyMediator: true)
         }
     }
     
     func set(internalUserID: String) {
         storage.internalUserID = internalUserID
-        updatePaymentData(forceValidation: true)
+        updatePaymentData(forceValidation: true, notifyMediator: true)
     }
     
     func set(properties: [String: Any]) {
@@ -104,13 +104,14 @@ extension OtterScaleInteractor {
     }
     
     func updatePaymentData(forceValidation: Bool = false,
-                           completion: ((PaymentData?) -> Void)? = nil) {
+                           completion: ((PaymentData?) -> Void)? = nil,
+                           notifyMediator: Bool) {
         let finish: (AppStoreValidateResult?) -> Void = { result in
             completion?(result?.paymentData)
         }
         
         if forceValidation {
-            iapManager.validateAppStoreReceipt(completion: finish)
+            iapManager.validateAppStoreReceipt(completion: finish, notifyMediator: notifyMediator)
         } else {
             iapManager.obtainAppStoreValidateResult(completion: finish)
         }

@@ -10,7 +10,8 @@ import StoreKit
 protocol IAPManagerProtocol {
     func fetchAppStoreReceipt(completion: @escaping (String?) -> Void)
     func validateAppStoreReceipt(prices: [IAPPrice],
-                                 completion: ((AppStoreValidateResult?) -> Void)?)
+                                 completion: ((AppStoreValidateResult?) -> Void)?,
+                                 notifyMediator: Bool)
     func obtainAppStoreValidateResult(mapper: ValidateAppStoreReceiptResponseProtocol,
                                       completion: ((AppStoreValidateResult?) -> Void)?)
     func retrieveProducts(ids: [String],
@@ -69,7 +70,8 @@ extension IAPManager {
     }
     
     func validateAppStoreReceipt(prices: [IAPPrice] = [],
-                                 completion: ((AppStoreValidateResult?) -> Void)? = nil) {
+                                 completion: ((AppStoreValidateResult?) -> Void)? = nil,
+                                 notifyMediator: Bool = true) {
         let validatorCompletion: ((AppStoreValidateResult?) -> Void) = { [weak self] result in
             guard let self = self else {
                 return
@@ -85,7 +87,9 @@ extension IAPManager {
                 self.storage.accessValidTill = result.accessValidTill
             }
             
-            self.mediator.notifyAbout(result: result)
+            if notifyMediator {
+                self.mediator.notifyAbout(result: result)
+            }
             
             completion?(result)
         }
