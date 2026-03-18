@@ -14,17 +14,20 @@ protocol AnalyticsMediatorProtocol {
 final class AnalyticsMediator: AnalyticsMediatorProtocol {
     static let shared = AnalyticsMediator()
     
-    private var delegates = [Weak<AnalyticsDelegate>]()
+    private var delegates = [Weak<AnyObject>]()
+    
     
     private init() {}
     
     func notifyAbout(model: ADServiceAttributionsModel?) {
-        delegates.forEach { $0.weak?.analyticsDidReceive(attributionsModel: model) }
+        delegates.forEach {
+            ($0.weak as? AnalyticsDelegate)?.analyticsDidReceive(attributionsModel: model)
+        }
     }
     
     func add(delegate: AnalyticsDelegate) {
         let weakly = delegate as AnyObject
-        delegates.append(Weak<AnalyticsDelegate>(weakly))
+        delegates.append(Weak(weakly))
         delegates = delegates.filter { $0.weak != nil }
     }
     

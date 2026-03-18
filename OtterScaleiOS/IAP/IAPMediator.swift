@@ -14,17 +14,17 @@ protocol IAPMediatorProtocol {
 final class IAPMediator: IAPMediatorProtocol {
     static let shared = IAPMediator()
     
-    private var delegates = [Weak<OtterScaleReceiptValidationDelegate>]()
+    private var delegates = [Weak<AnyObject>]()
     
     private init() {}
     
     func notifyAbout(result: AppStoreValidateResult?) {
-        delegates.forEach { $0.weak?.otterScaleDidValidatedReceipt(with: result) }
+        delegates.forEach { ($0.weak as? OtterScaleReceiptValidationDelegate)?.otterScaleDidValidatedReceipt(with: result) }
     }
     
     func add(delegate: OtterScaleReceiptValidationDelegate) {
         let weakly = delegate as AnyObject
-        delegates.append(Weak<OtterScaleReceiptValidationDelegate>(weakly))
+        delegates.append(Weak(weakly))
         delegates = delegates.filter { $0.weak != nil }
     }
     

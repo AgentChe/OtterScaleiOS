@@ -5,14 +5,14 @@
 //  Created by Андрей Чернышев on 19.01.2022.
 //
 
-final class Weak<T> {
-    weak private var value: AnyObject?
+final class Weak<T: AnyObject> {
+    weak private var value: T?
     
     var weak: T? {
-        return value as? T
+        return value
     }
     
-    init<T: AnyObject>(_ value: T) {
+    init(_ value: T) {
         self.value = value
     }
 }
